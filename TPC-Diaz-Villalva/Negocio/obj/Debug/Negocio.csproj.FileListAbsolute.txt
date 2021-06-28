@@ -1,0 +1,1 @@
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache

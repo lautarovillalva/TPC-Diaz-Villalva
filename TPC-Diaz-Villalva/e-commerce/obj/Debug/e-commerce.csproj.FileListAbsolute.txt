@@ -1,0 +1,2 @@
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csprojAssemblyReference.cache
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache

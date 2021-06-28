@@ -1,0 +1,2 @@
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache

@@ -14,7 +14,7 @@ namespace DAO
         public List<Medida> GetMedidas()
         {
             List<Medida> lista = new List<Medida>();
-            string consulta = "SELECT MEDIDAS.ID, MEDIDAS.NOMBRE, MEDIDAS.LARGO_CM, MEDIDAS.ANCHO_CM FROM MEDIDAS";
+            string consulta = "SELECT ISNULL(MEDIDAS.NOMBRE, MEDIDAS.ANCHO_CM+'x'+MEDIDAS.LARGO_CM) AS MEDIDA, MEDIDAS.LARGO_CM, MEDIDAS.ANCHO_CM FROM MEDIDAS";
             DataTable tabla = accesoDatos.ObtenerTabla("Medidas", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
