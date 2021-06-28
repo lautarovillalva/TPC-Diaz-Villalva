@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Articulo
+    public class Articulo
     {
 
-        int ID { get; set; }
-        string Nombre { get; set; }
-        double Precio { get; set; }
-        int Cantidad { get; set; }
-        Composicion composicion { get; set; }
-        Medida medida { get; set; }
-        Estilo estilo { get; set; }
-        Color color { get; set; }
-        Categoria categoria { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public double Precio { get; set; }
+        public int Cantidad { get; set; }
+        public string Imagen { get; set; }
+        public Composicion composicion { get; set; }
+        public Medida medida { get; set; }
+        public Estilo estilo { get; set; }
+        public Color color { get; set; }
+        public Categoria categoria { get; set; }
 
     }
 }

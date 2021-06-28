@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Medida
+    public class Medida
     {
-        int ID { get; set; }
-        string Nombre { get; set; }
-        decimal Largo { get; set; }
-        decimal Ancho { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Largo { get; set; }
+        public string Ancho { get; set; }
+        public Medida() { }
 
+        public Medida(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+
+        public override string ToString()
+        {
+            if (Nombre==null)
+            {
+                string cm2 = Largo.ToString() + " x " + Ancho.ToString();
+                Nombre = cm2;
+
+            }
+            return Nombre;
+        }
 
     }
 }

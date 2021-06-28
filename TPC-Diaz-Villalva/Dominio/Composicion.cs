@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Composicion
+    public class Composicion
     {
-        int ID { get; set; }
-        string Nombre { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public Composicion() { }
+        public Composicion(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

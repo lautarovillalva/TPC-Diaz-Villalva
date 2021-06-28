@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Estado
+    public class Estado
     {
-        int ID { get; set; }
-        string Nombre { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public Estado() { }
+        public Estado(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

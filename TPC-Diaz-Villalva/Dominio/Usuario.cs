@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Usuario
+    public class Usuario
     {
-        int ID { get; set; }
-        string Mail { get; set; }
-        string password { get; set; }
-        string Nombre { get; set; }
-        string Apellido { get; set; }
-        DateTime FechaNacimiento { get; set; }
+        public int ID { get; set; }
+        public string Mail { get; set; }
+        public string password { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public string Telefono { get; set; }
+        public string Dni { get; set; }
 
-
-       public Usuario()
+        public Usuario()
         {
 
         }

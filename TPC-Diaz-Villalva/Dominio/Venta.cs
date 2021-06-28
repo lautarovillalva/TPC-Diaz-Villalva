@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Venta
+    public class Venta
     {
-        int ID { get; set; }
-        Usuario usuario { get; set; }
-        List<Articulo> lista { get; set; }
-        DateTime Fecha { get; set; }
-        int Cantidad { get; set; }
-        double Total { get; set; }
-        Medio_de_pago pago { get; set; }
-        Estado estado { get; set; }
+        public int ID { get; set; }
+        public Usuario usuario { get; set; }
+        public List<Articulo> lista { get; set; }
+        public DateTime Fecha { get; set; }
+        public int Cantidad { get; set; }
+        public double Total { get; set; }
+        public Medio_de_pago pago { get; set; }
+        public Estado estado { get; set; }
 
 
 
