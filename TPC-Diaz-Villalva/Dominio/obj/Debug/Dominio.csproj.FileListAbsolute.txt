@@ -1,0 +1,2 @@
+C:\Users\Tomas\Desktop\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Tomas\Desktop\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
