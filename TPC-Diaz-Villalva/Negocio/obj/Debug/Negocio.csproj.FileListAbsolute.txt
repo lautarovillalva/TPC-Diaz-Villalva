@@ -1,1 +1,12 @@
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\Negocio.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\DAO.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\Dominio.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\DAO.pdb
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Negocio\obj\Debug\Negocio.pdb

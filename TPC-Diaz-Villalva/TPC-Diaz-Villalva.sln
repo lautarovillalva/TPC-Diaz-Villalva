@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce", "e-commerce\e-commerce.csproj", "{E052696F-EB32-42DD-8BEA-43E73C869626}"
+	ProjectSection(ProjectDependencies) = postProject
+		{526DE4EA-6A54-4A7D-AC6E-DD4D0F662BC0} = {526DE4EA-6A54-4A7D-AC6E-DD4D0F662BC0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{FBBE66F8-662B-4834-A647-D137AAD71A2D}"
 EndProject

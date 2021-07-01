@@ -6,3 +6,9 @@ C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Do
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.dll
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\bin\Debug\Dominio.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.dll
+C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\Dominio\obj\Debug\Dominio.pdb
