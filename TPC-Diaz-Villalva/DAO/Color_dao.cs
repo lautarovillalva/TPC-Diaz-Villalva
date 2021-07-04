@@ -14,14 +14,15 @@ namespace DAO
         public List<Color> GetColores()
         {
             List<Color> lista = new List<Color>();
-            string consulta = "SELECT COLORES.ID, COLORES.NOMBRE FROM COLORES";
+            string consulta = "SELECT COLORES.ID, COLORES.NOMBRE, COLORES.CODIGO FROM COLORES";
             DataTable tabla = accesoDatos.ObtenerTabla("Colores", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 Color color = new Color
                 {
                     ID = Convert.ToInt32(tabla.Rows[i][0]),
-                    Nombre = tabla.Rows[i][1].ToString()
+                    Nombre = tabla.Rows[i][1].ToString(),
+                    Codigo = tabla.Rows[i][2].ToString(),
                 };
 
 

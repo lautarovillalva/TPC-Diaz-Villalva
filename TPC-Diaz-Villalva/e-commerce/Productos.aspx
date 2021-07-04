@@ -33,6 +33,7 @@ en sucursales seleccionadas
                  <ItemTemplate>
 
              <div class="col mb-3">
+                 <a href="Detalles.aspx?id=<%# Eval("ID") %>">
                 <div class="card h-100">
                      <img src="<%# Eval("Imagen") %>" class="card-img-top" alt="...">
                      <div class="card-body">
@@ -41,6 +42,7 @@ en sucursales seleccionadas
 
                       </div>
                 </div>
+                </a>
             </div>
 
                 </ItemTemplate>

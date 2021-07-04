@@ -8,7 +8,7 @@ $('.ver-listado').click(function () {
 });
 
 
-$('.nav-link').click(function () {
+$('.el-menu').click(function () {
 
    
 

@@ -10,14 +10,19 @@ namespace Dominio
     {
         public int ID { get; set; }
         public string Nombre { get; set; }
+        public string Codigo { get; set; }
+
+
         public Color() { }
-        public Color(string nombre)
+        public Color(string Codigo)
         {
-            this.Nombre = nombre;
+            this.Codigo = Codigo;
         }
+
+
         public override string ToString()
         {
-            return Nombre;
+            return Codigo;
         }
     }
 }

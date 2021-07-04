@@ -243,4 +243,160 @@ footer {
     padding: 30px;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+.productos .card .precio {
+    color: black;
+}
+
 /*PRODUCTOS - FIN*/
+
+/*DETALLE PRODUCTOS */
+
+.detalle .card img {
+    width: 100%;
+}
+
+.detalle {
+    padding: 40px;
+    margin-top: -30px;
+}
+
+    .detalle .card-title {
+        font-size: 30px;
+        font-weight: 600;
+        color: #444444;
+    }
+
+  
+
+.color {
+    border: solid 2px #fff;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-top: 0px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.barra-color span {
+    color: #787878;
+    font-size: 23px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.barra-color {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-left: 30px;
+    padding-right: 20px;
+    width: 200px;
+    justify-content: space-between;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.detalle .precio {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+.detalle .card .card-body {
+    padding: 30px;
+    width: 95%;
+    margin: auto;
+    margin-top: 90px;
+    box-shadow: 1px 2px 20px 1px rgba(0, 0, 0, 0.1);
+    height: 80%;
+    border-radius: 10px
+}
+
+    .detalle .card .card-body p {
+        color: #afafaf;
+    }
+
+.detalle .card {
+    border-radius: 20px;
+    box-shadow: 1px 2px 20px 1px rgba(0, 0, 0, 0.1);
+    border: none
+}
+
+    .detalle .card img {
+        border-radius: 20px
+    }
+
+    .detalle .card .card-title {
+        background: #ff7699;
+        color: #f6f6f6;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 15px;
+    }
+
+.detalle .botones {
+    display: grid;
+    margin-top: 60px;
+    grid-gap: 5px
+}
+
+    .detalle .botones input {
+        margin: auto;
+        background: red;
+        padding: 15px;
+        width: 300px;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        transition: .5s;
+        border: solid 1px #ff7699;
+    }
+
+        .detalle .botones input:nth-child(1) {
+            background: #ff7699;
+        }
+
+        .detalle .botones input:nth-child(2) {
+            background: #ffbbcd;
+        }
+
+
+        .detalle .botones input:hover {
+            background: transparent;
+            border: solid 1px #ff7699;
+            color: #ff7699;
+        }
+
+
+.detalle .caracteristicas span {
+    padding: 20px;
+    box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    color: #444444
+}
+
+.detalle .caracteristicas {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.detalle .nav-link {
+    color: #ff7699;
+}
+
+/*DETALLE PRODUCTOS - FIN*/
