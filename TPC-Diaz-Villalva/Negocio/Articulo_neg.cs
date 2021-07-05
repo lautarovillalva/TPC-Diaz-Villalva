@@ -16,6 +16,20 @@ namespace Negocio
             Articulo_dao art = new Articulo_dao();
             return art.GetArticulos();
         }
+        public bool eliminarArticulo(Articulo articulo)
+        {
+
+            Articulo_dao aux = new Articulo_dao();
+            return aux.delArticulo(articulo);
+
+        }
+        public bool modificarArticulo(Articulo articulo)
+        {
+
+            Articulo_dao aux = new Articulo_dao();
+            return aux.modArticulo(articulo);
+
+        }
 
     }
 }

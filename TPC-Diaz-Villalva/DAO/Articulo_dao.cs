@@ -38,5 +38,30 @@ namespace DAO
 
             return lista;
         }
+        public bool delArticulo(Articulo articulo)
+        {
+            string consulta = "delete from ARTICULOS where Id=" + articulo.ID + "";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool modArticulo(Articulo articulo)
+        {
+            string consulta = "UPDATE ARTICULOS SET ID='"+articulo.ID+"', NOMBRE='"+articulo.Nombre+"', PRECIO='"+articulo.Precio+"', IMAGEN='"+articulo.Imagen+"', STOCK='"+articulo.Cantidad+"', ID_CATEGORIA='"+articulo.categoria.ID+"', ID_COMPOSICION='"+articulo.composicion.ID+"', ID_MEDIDA='"+articulo.medida.ID+"', ID_ESTILO='"+articulo.estilo.ID+"', ID_COLOR='"+articulo.color.Nombre+ "' WHERE ID='"+articulo.ID+"'" ;
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }

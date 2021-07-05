@@ -9,3 +9,10 @@ C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.dll
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.pdb
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\bin\Debug\DAO.dll
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\bin\Debug\DAO.pdb
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\bin\Debug\Dominio.dll
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\bin\Debug\Dominio.pdb
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.dll
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\DAO\obj\Debug\DAO.pdb
