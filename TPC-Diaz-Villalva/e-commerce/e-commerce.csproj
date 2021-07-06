@@ -146,6 +146,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="ABML-Articulo.aspx" />
+    <Content Include="ABML-Categoria.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="ABML-Articulo.aspx.designer.cs">
       <DependentUpon>ABML-Articulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABML-Categoria.aspx.cs">
+      <DependentUpon>ABML-Categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABML-Categoria.aspx.designer.cs">
+      <DependentUpon>ABML-Categoria.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

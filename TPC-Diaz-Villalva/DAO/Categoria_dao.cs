@@ -29,6 +29,30 @@ namespace DAO
 
             return lista;
         }
+        public bool modCategoria(Categoria categoria)
+        {
+            string consulta = "UPDATE CATEGORIAS SET NOMBRE='"+categoria.Nombre+"' WHERE ID='"+categoria.ID+"'";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool delCategoria(Categoria categoria)
+        {
+            string consulta = "delete from CATEGORIAS where Id=" + categoria.ID + "";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
     }
 }

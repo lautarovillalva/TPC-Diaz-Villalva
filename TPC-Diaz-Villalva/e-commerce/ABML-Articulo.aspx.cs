@@ -88,14 +88,14 @@ namespace e_commerce
             string estilo = ((DropDownList)dgvArticulos.Rows[e.RowIndex].FindControl("ddl_eit_Estilo")).Text;
             string color = ((DropDownList)dgvArticulos.Rows[e.RowIndex].FindControl("ddl_eit_Color")).Text;
 
-            Articulo actualizado = new Articulo
-            {
-                ID = Convert.ToInt32(id),
-                Nombre = nombre,
-                Precio = Convert.ToDouble(precio),
-                Cantidad = Convert.ToInt32(cantidad),
-                Imagen = imagen
-            };
+            Articulo actualizado = new Articulo();
+
+            actualizado.ID = Convert.ToInt32(id);
+            actualizado.Nombre = nombre;
+            actualizado.Precio = Convert.ToDouble(precio);
+            actualizado.Cantidad = Convert.ToInt32(cantidad);
+            actualizado.Imagen = imagen;
+
             actualizado.categoria.ID = Convert.ToInt32(categoria);
             actualizado.composicion.ID = Convert.ToInt32(composicion);
             actualizado.medida.ID = Convert.ToInt32(medida);

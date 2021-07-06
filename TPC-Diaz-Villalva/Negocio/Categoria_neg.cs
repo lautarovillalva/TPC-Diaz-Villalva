@@ -15,5 +15,15 @@ namespace Negocio
             Categoria_dao aux = new Categoria_dao();
             return aux.GetCategorias();
         }
+        public bool modificarCategoria(Categoria categoria)
+        {
+            Categoria_dao categoria_Dao = new Categoria_dao();
+            return categoria_Dao.modCategoria(categoria);
+        }
+        public bool eliminarCategoria(Categoria categoria)
+        {
+            Categoria_dao categoria_Dao = new Categoria_dao();
+            return categoria_Dao.delCategoria(categoria);
+        }
     }
 }
