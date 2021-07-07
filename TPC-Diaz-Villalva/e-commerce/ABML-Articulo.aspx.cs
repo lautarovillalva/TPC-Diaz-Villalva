@@ -90,17 +90,27 @@ namespace e_commerce
 
             Articulo actualizado = new Articulo();
 
+            Categoria cat = new Categoria();
+            cat.ID = Convert.ToInt32(categoria);
+            Composicion comp = new Composicion();
+            comp.ID = Convert.ToInt32(composicion);
+            Medida med = new Medida();
+            med.ID = Convert.ToInt32(medida);
+            Estilo est = new Estilo();
+            est.ID = Convert.ToInt32(estilo);
+            Color col = new Color();
+            col.ID = Convert.ToInt32(color);
+
             actualizado.ID = Convert.ToInt32(id);
             actualizado.Nombre = nombre;
             actualizado.Precio = Convert.ToDouble(precio);
             actualizado.Cantidad = Convert.ToInt32(cantidad);
             actualizado.Imagen = imagen;
-
-            actualizado.categoria.ID = Convert.ToInt32(categoria);
-            actualizado.composicion.ID = Convert.ToInt32(composicion);
-            actualizado.medida.ID = Convert.ToInt32(medida);
-            actualizado.estilo.ID = Convert.ToInt32(estilo);
-            actualizado.color.ID = Convert.ToInt32(color);
+            actualizado.categoria = cat;
+            actualizado.composicion = comp;
+            actualizado.medida =med ;
+            actualizado.estilo = est;
+            actualizado.color =col ;
 
             Articulo_neg articulo_Neg = new Articulo_neg();
             articulo_Neg.modificarArticulo(actualizado);

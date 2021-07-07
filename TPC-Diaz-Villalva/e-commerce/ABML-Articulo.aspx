@@ -4,7 +4,7 @@
         <Columns>
             <asp:TemplateField HeaderText="ID">
                 <EditItemTemplate>
-                    <asp:Label ID="lbl_eit_Id" runat="server"></asp:Label>
+                    <asp:Label ID="lbl_eit_Id" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_it_Id" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
@@ -12,10 +12,10 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="NOMBRE">
                 <EditItemTemplate>
-                    <asp:TextBox ID="tbx_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                    <asp:TextBox ID="tbx_Nombre" runat="server" Text='<%# Bind("NOMBRE") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
+                    <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("NOMBRE") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="PRECIO">
