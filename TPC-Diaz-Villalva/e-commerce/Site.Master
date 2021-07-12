@@ -81,7 +81,7 @@
 
     <form class="form-inline my-2 my-lg-0">
        <asp:TextBox class="form-control mr-sm-2" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
-        <a class="login" href="#"><i class="far fa-user"></i></a>
+        <a class="login" href="/login"><i class="far fa-user"></i></a>
         <a class="carrito" href="#"><i class="fas fa-shopping-cart"></i></a>
     </form>
   </div>

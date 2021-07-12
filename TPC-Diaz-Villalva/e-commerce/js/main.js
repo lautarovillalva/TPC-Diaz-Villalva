@@ -46,9 +46,14 @@ $(window).scroll(function () {
 
 });
 
-1
-2
-3
-4
-5
+
+$(document).ready(function () {
+    var url = window.location;
+    $('.nav-item').removeClass('active');
+    $('.nav-item a').each(function () {
+        if (this.href == url) {
+            $(this).parent().addClass('active');
+        }
+    });
+});
 

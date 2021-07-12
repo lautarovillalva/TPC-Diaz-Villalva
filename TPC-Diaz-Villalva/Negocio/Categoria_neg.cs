@@ -25,5 +25,48 @@ namespace Negocio
             Categoria_dao categoria_Dao = new Categoria_dao();
             return categoria_Dao.delCategoria(categoria);
         }
+
+        public string getTotal()
+        {
+            Categoria_dao categoria_Dao = new Categoria_dao();
+
+            List<int> totales = new List<int>();
+            List<Categoria> lista = ListarCategorias();
+            
+            string porcentajes = "";
+            int color = 0;
+
+
+            foreach (Categoria item in lista)
+            {
+                totales.Add(categoria_Dao.totalCategoria(item.ID));
+            }
+
+            totales.Sort();
+
+            for(int i=0; i< totales.Count; i++)
+            {
+                color += 100;
+            
+
+                if (i == totales.Count - 1)
+                {
+                    porcentajes += "rgb(72," + color + ", 176) " + totales[i] * 100 / totales.Sum() + "% ";
+                }
+
+                else
+                {
+                    porcentajes += "rgb(72," + color + ", 176) " + totales[i] * 100 / totales.Sum() + "% " + totales[i + 1] * 100 / totales.Sum() + "%, ";
+                }
+               
+
+            }
+
+
+            string graficoCircular = "conic-gradient(" + porcentajes + ")";
+
+            return graficoCircular;
+        }
+
     }
 }

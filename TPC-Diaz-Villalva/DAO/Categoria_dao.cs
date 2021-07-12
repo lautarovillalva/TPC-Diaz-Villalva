@@ -54,5 +54,13 @@ namespace DAO
             return false;
         }
 
+        public int totalCategoria(int id)
+        {
+            string consulta = "select COUNT(ID_CATEGORIA) from  ARTICULOS where ID_CATEGORIA =" + id;
+            DataTable tabla = accesoDatos.ObtenerTabla("CanCategoria", consulta);
+
+            return Convert.ToInt32(tabla.Rows[0][0]);
+        }
+
     }
 }
