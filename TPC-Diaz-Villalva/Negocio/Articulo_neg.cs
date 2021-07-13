@@ -38,5 +38,11 @@ namespace Negocio
 
         }
 
+        public List<Articulo> ArticulosFiltrados(string valor)
+        {
+            Articulo_dao aux = new Articulo_dao();
+            return aux.getArticulosFiltrados(valor);
+        }
+
     }
 }

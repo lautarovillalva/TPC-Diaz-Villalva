@@ -19,7 +19,7 @@ namespace e_commerce
         public void mostrarArticulos()
         {
             Articulo_neg art = new Articulo_neg();
-            rpArticulos.DataSource = art.ListarArticulos();
+            rpArticulos.DataSource = art.ArticulosFiltrados(Request.QueryString["valor"]);
             rpArticulos.DataBind();
         }
     }

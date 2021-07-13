@@ -41,7 +41,7 @@
             { %>
 
             <div class="col-sm">
-               <a href="#"><img src="img/categorias/<%: categoria.Nombre%>.png" /></a>
+               <a href="Productos.aspx?valor=<%:categoria.Nombre %>"><img src="img/categorias/<%: categoria.Nombre%>.png" /></a>
             </div>
        
        <%} %>
