@@ -59,15 +59,15 @@
             <ul class="sub-menu-desplegable">
 
                 <% foreach (Dominio.Categoria item in listaCategorias) { %>
-                <li><a class="dropdown-item" href="#"><%: item %></a></li>
+                <li><a class="dropdown-item" href="Productos.aspx?valor=<%:item.Nombre %>"><%: item %></a></li>
                 <%} %>
             </ul>
-          <a class="dropdown-item ver-listado" href="#">Estilos <i class="fas fa-plus"></i></a>
+<%--          <a class="dropdown-item ver-listado" href="#">Estilos <i class="fas fa-plus"></i></a>
             <ul class="sub-menu-desplegable">
                   <% foreach (Dominio.Estilo item in listaEstilos) { %>
                 <li><a class="dropdown-item" href="#"><%: item %></a></li>
                 <%} %>
-            </ul>
+            </ul>--%>
              
         </div>
       </li>
