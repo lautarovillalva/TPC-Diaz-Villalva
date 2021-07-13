@@ -23,7 +23,11 @@ namespace e_commerce
 
             anterior = articulos.Find(X => X.ID == int.Parse(idprod));
 
-            cargarformulario();
+            if (!IsPostBack)
+            {
+                cargarformulario();
+            }
+
         }
         void cargarformulario()
         {
@@ -84,31 +88,31 @@ namespace e_commerce
             Categoria_neg categoria_Neg = new Categoria_neg();
             categorias = categoria_Neg.ListarCategorias();
             Categoria categoria_modificado = new Categoria();
-            categoria_modificado = categorias.Find(X => X.Nombre == ddl_categorias.SelectedValue);
+            categoria_modificado = categorias.Find(X => X.Nombre == ddl_categorias.SelectedItem.Text);
 
             List<Color> colors = new List<Color>();
             Color_neg color_Neg = new Color_neg();
             colors = color_Neg.ListarColores();
             Color color_modificado = new Color();
-            color_modificado = colors.Find(X => X.Codigo == ddl_colores.SelectedValue);
+            color_modificado = colors.Find(X => X.Codigo == ddl_colores.SelectedItem.Text);
 
             List<Composicion> composiciones = new List<Composicion>();
             Composicion_neg composicion_Neg = new Composicion_neg();
             composiciones = composicion_Neg.ListarComposiciones();
             Composicion composicion_modificado = new Composicion();
-            composicion_modificado = composiciones.Find(X => X.Nombre == ddl_composiciones.SelectedValue);
+            composicion_modificado = composiciones.Find(X => X.Nombre == ddl_composiciones.SelectedItem.Text);
 
             List<Estilo> estilos = new List<Estilo>();
             Estilo_neg estilo_Neg = new Estilo_neg();
             estilos = estilo_Neg.listarEstilos();
             Estilo estilo_modificado = new Estilo();
-            estilo_modificado = estilos.Find(X => X.Nombre == ddl_estilos.SelectedValue);
+            estilo_modificado = estilos.Find(X => X.Nombre == ddl_estilos.SelectedItem.Text);
 
             List<Medida> medidas = new List<Medida>();
             Medida_neg medida_Neg = new Medida_neg();
             medidas = medida_Neg.ListarMedidas();
             Medida medida_modificado = new Medida();
-            medida_modificado = medidas.Find(X => X.Nombre == ddl_medidas.SelectedValue);
+            medida_modificado = medidas.Find(X => X.Nombre == ddl_medidas.SelectedItem.Text);
 
             modificado.ID = Convert.ToInt32(lbl_id.Text);
             modificado.Nombre = tbx_nombre.Text;
