@@ -52,7 +52,19 @@ namespace DAO
         }
         public bool modArticulo(Articulo articulo)
         {
-            string consulta = "UPDATE ARTICULOS SET ID='"+articulo.ID+"', NOMBRE='"+articulo.Nombre+"', PRECIO='"+articulo.Precio+"', IMAGEN='"+articulo.Imagen+"', STOCK='"+articulo.Cantidad+"', ID_CATEGORIA='"+articulo.categoria.ID+"', ID_COMPOSICION='"+articulo.composicion.ID+"', ID_MEDIDA='"+articulo.medida.ID+"', ID_ESTILO='"+articulo.estilo.ID+"', ID_COLOR='"+articulo.color.Nombre+ "' WHERE ID='"+articulo.ID+"'" ;
+            string consulta = "UPDATE ARTICULOS SET NOMBRE='"+articulo.Nombre+"', PRECIO='"+articulo.Precio+"', IMAGEN='"+articulo.Imagen+"', STOCK='"+articulo.Cantidad+"', ID_CATEGORIA='"+articulo.categoria.ID+"', ID_COMPOSICION='"+articulo.composicion.ID+"', ID_MEDIDA='"+articulo.medida.ID+"', ID_ESTILO='"+articulo.estilo.ID+"', ID_COLOR='"+articulo.color.ID+"' WHERE ID='"+articulo.ID+"'" ;
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool setArticulo(Articulo articulo)
+        {
+            string consulta = "INSERT INTO ARTICULOS (NOMBRE,PRECIO, IMAGEN, STOCK, ID_CATEGORIA, ID_COMPOSICION, ID_MEDIDA	, ID_ESTILO,	ID_COLOR) VALUES('"+ articulo.Nombre  +"',	'"+articulo.Precio+"',	'"+articulo.Imagen+"',	'"+articulo.Cantidad+"',	'"+articulo.categoria.ID+"',	'"+articulo.composicion.ID+"',	'"+articulo.medida.ID+"',	'"+articulo.estilo.ID+"',	'"+articulo.color.ID+"')";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)

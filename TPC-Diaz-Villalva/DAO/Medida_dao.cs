@@ -8,7 +8,7 @@ using System.Data;
 
 namespace DAO
 {
-    class Medida_dao
+    public class Medida_dao
     {
         AccesoDatos accesoDatos = new AccesoDatos();
         public List<Medida> GetMedidas()

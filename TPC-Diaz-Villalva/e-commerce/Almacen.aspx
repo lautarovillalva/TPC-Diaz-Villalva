@@ -3,7 +3,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-
+    <a   class="btn btn-primary" href="Agregar-Articulo.aspx">Agregar Articulo</a>
+    <hr />
       <asp:Repeater ID="rpAdminArticulo" runat="server">
             <ItemTemplate>
       <div class="row articulos">
@@ -23,7 +24,7 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Modificar</a>
+                                            <a class="dropdown-item" href="/Modificar-articulo.aspx?idprod=<%# Eval("ID") %>">Modificar</a>
                                             <a class="dropdown-item" href="#">Clonar</a>
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">Eliminar</a>

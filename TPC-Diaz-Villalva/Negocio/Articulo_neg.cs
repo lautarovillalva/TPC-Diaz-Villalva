@@ -30,6 +30,13 @@ namespace Negocio
             return aux.modArticulo(articulo);
 
         }
+        public bool agregarArticulo(Articulo articulo)
+        {
+
+            Articulo_dao aux = new Articulo_dao();
+            return aux.setArticulo(articulo);
+
+        }
 
     }
 }
