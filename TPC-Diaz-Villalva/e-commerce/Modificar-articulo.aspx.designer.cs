@@ -24,6 +24,15 @@ namespace e_commerce
         protected global::System.Web.UI.WebControls.Label lbl_id;
 
         /// <summary>
+        /// Control tbx_imagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_imagen;
+
+        /// <summary>
         /// Control tbx_nombre.
         /// </summary>
         /// <remarks>
@@ -31,15 +40,6 @@ namespace e_commerce
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_nombre;
-
-        /// <summary>
-        /// Control tbx_precio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_precio;
 
         /// <summary>
         /// Control tbx_cantidad.
@@ -51,13 +51,13 @@ namespace e_commerce
         protected global::System.Web.UI.WebControls.TextBox tbx_cantidad;
 
         /// <summary>
-        /// Control tbx_imagen.
+        /// Control tbx_precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_imagen;
+        protected global::System.Web.UI.WebControls.TextBox tbx_precio;
 
         /// <summary>
         /// Control ddl_categorias.
