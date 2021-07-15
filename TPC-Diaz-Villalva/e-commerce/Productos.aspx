@@ -23,8 +23,22 @@ en sucursales seleccionadas
     </div>
   </div>
 </div>
-   
-
+    <fieldset>
+        <h3>CATEGORÍAS</h3>
+    <asp:CheckBoxList ID="cbl_categorias" RepeatDirection="Horizontal" runat="server">
+    </asp:CheckBoxList>
+    </fieldset>
+    <fieldset>
+        <h3>ESTILOS</h3>
+    <asp:CheckBoxList ID="cbl_estilos" RepeatDirection="Horizontal" runat="server">
+    </asp:CheckBoxList>
+    </fieldset>
+    <fieldset>
+        <h3>MEDIDAS</h3>
+    <asp:CheckBoxList ID="cbl_medidas" RepeatDirection="Horizontal" runat="server">
+    </asp:CheckBoxList>
+    </fieldset>
+    <asp:Button ID="btn_filtrar" Text="Filtrar" OnClick="btn_filtrar_Click" runat="server" />
 
     <div class="container-fluid productos">
          <div class="row row-cols-1 row-cols-md-4">
