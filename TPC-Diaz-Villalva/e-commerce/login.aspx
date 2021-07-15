@@ -29,7 +29,7 @@
                        <img  src="img/logo-color.png"/>
                       <div class="input">
                           <label>Usuario o correo electronico</label>
-                          <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                          <asp:TextBox ID="txtUsuario" runat="server" ></asp:TextBox>
                       </div>
                       <div class="input">
                            <label>Contraseña</label>

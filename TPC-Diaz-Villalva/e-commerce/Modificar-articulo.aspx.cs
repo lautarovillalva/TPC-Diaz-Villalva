@@ -13,6 +13,8 @@ namespace e_commerce
     {
         public Articulo anterior = new Articulo();
         public Articulo modificado = new Articulo();
+        public string URLimagen = "";
+        public string color = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,12 +25,55 @@ namespace e_commerce
 
             anterior = articulos.Find(X => X.ID == int.Parse(idprod));
 
+            cargarImagen();
+          
+
             if (!IsPostBack)
             {
                 cargarformulario();
             }
+            else
+            {
+                cargarColor();
+            }
+            
+
+            
 
         }
+
+
+        void cargarImagen()
+        {
+            if(tbx_imagen.Text != "")
+            {
+                URLimagen = tbx_imagen.Text;
+            }
+
+            else
+            {
+                URLimagen = anterior.Imagen.ToString();
+            }
+            
+        }
+
+        void cargarColor()
+        {
+            Color_neg color_Neg = new Color_neg();
+            List<Color> lista = color_Neg.ListarColores();
+
+            foreach(Color item in lista)
+            {
+
+                if(ddl_colores.SelectedItem.Value == item.Nombre )
+                {
+                    color = item.Codigo;
+                }
+       
+            }
+
+        }
+
         void cargarformulario()
         {
             lbl_id.Text = anterior.ID.ToString();
@@ -36,12 +81,13 @@ namespace e_commerce
             tbx_precio.Text = anterior.Precio.ToString();
             tbx_cantidad.Text = anterior.Cantidad.ToString();
             tbx_imagen.Text = anterior.Imagen.ToString();
+           
 
             cargarDropdownlists();
 
             ddl_categorias.SelectedValue = anterior.categoria.ToString();
             ddl_estilos.SelectedValue = anterior.estilo.ToString();
-            ddl_colores.SelectedValue = anterior.color.ToString();
+          
             ddl_composiciones.SelectedValue = anterior.composicion.ToString();
             ddl_medidas.SelectedValue = anterior.medida.ToString();
 
@@ -56,14 +102,30 @@ namespace e_commerce
 
             ddl_medidas.DataSource = medida_Neg.ListarMedidas();
             ddl_medidas.DataBind();
+
             ddl_composiciones.DataSource = composicion_Neg.ListarComposiciones();
             ddl_composiciones.DataBind();
+
             ddl_categorias.DataSource = categoria_Neg.ListarCategorias();
             ddl_categorias.DataBind();
+
             ddl_estilos.DataSource = estilo_Neg.listarEstilos();
             ddl_estilos.DataBind();
-            ddl_colores.DataSource = color_Neg.ListarColores();
-            ddl_colores.DataBind();
+            
+            List<Color> lista = color_Neg.ListarColores();
+
+            foreach(Color item in lista)
+            {
+                ddl_colores.Items.Add(item.Nombre);
+
+                if (anterior.color.ToString() == item.Codigo)
+                {
+                    ddl_colores.SelectedValue = item.Nombre;
+                    color = item.Codigo;
+                }
+               
+
+            }
 
         }
 
@@ -79,38 +141,32 @@ namespace e_commerce
             }
 
 
-            
         }
 
         void cargarModificado()
         {
-            List<Categoria> categorias = new List<Categoria>();
             Categoria_neg categoria_Neg = new Categoria_neg();
-            categorias = categoria_Neg.ListarCategorias();
+            List<Categoria> categorias = categoria_Neg.ListarCategorias();
             Categoria categoria_modificado = new Categoria();
             categoria_modificado = categorias.Find(X => X.Nombre == ddl_categorias.SelectedItem.Text);
 
-            List<Color> colors = new List<Color>();
             Color_neg color_Neg = new Color_neg();
-            colors = color_Neg.ListarColores();
+            List<Color> colors = color_Neg.ListarColores();
             Color color_modificado = new Color();
-            color_modificado = colors.Find(X => X.Codigo == ddl_colores.SelectedItem.Text);
+            color_modificado = colors.Find(X => X.Nombre == ddl_colores.SelectedItem.Text);
 
-            List<Composicion> composiciones = new List<Composicion>();
             Composicion_neg composicion_Neg = new Composicion_neg();
-            composiciones = composicion_Neg.ListarComposiciones();
+            List<Composicion> composiciones = composicion_Neg.ListarComposiciones();
             Composicion composicion_modificado = new Composicion();
             composicion_modificado = composiciones.Find(X => X.Nombre == ddl_composiciones.SelectedItem.Text);
 
-            List<Estilo> estilos = new List<Estilo>();
             Estilo_neg estilo_Neg = new Estilo_neg();
-            estilos = estilo_Neg.listarEstilos();
+            List <Estilo> estilos = estilo_Neg.listarEstilos();
             Estilo estilo_modificado = new Estilo();
             estilo_modificado = estilos.Find(X => X.Nombre == ddl_estilos.SelectedItem.Text);
 
-            List<Medida> medidas = new List<Medida>();
             Medida_neg medida_Neg = new Medida_neg();
-            medidas = medida_Neg.ListarMedidas();
+            List<Medida> medidas = medida_Neg.ListarMedidas();
             Medida medida_modificado = new Medida();
             medida_modificado = medidas.Find(X => X.Nombre == ddl_medidas.SelectedItem.Text);
 
@@ -125,6 +181,17 @@ namespace e_commerce
             modificado.estilo = estilo_modificado;
             modificado.medida = medida_modificado;
 
+        }
+
+        protected void tbx_imagen_TextChanged(object sender, EventArgs e)
+        {
+           URLimagen = tbx_imagen.Text;
+
+        }
+
+        protected void ddl_colores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarColor();
         }
     }
 }

@@ -3,11 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <contenttemplate>
+
     <form class="form-horizontal">
         <fieldset>
-
-     
-         
 
         <div class="modificar"> 
 
@@ -18,9 +20,10 @@
 
             <div class="row ">
                  <div class="col-xl-3">
+                      
 
                        <!-- Text input-->
-                <img src="<%: tbx_imagen.Text %>" />
+                        <img src="<%: URLimagen %>"  />
                      <div class=" dropdown">
                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -29,7 +32,7 @@
                         </a>
                             <div class="dropdown-menu  dropdown-menu-right shadow "
                                                     aria-labelledby="navbarDropdown">
-                                <asp:TextBox ID="tbx_imagen" CssClass="form-control input-group-lg" runat="server" />
+                                <asp:TextBox ID="tbx_imagen" CssClass="form-control input-group-lg" runat="server" OnTextChanged="tbx_imagen_TextChanged" UseSubmitBehavior="False" AutoPostBack="True" />
                                            
                                <div class="dropdown-divider"></div>
                                <a class="dropdown-item" href="#">Ampliar imagen</a>
@@ -155,14 +158,14 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="product_categorie">COLOR</label>
                                     <div class="col-md-12">
-                                        <asp:DropDownList ID="ddl_colores" CssClass="form-control" runat="server">
+                                        <asp:DropDownList ID="ddl_colores" CssClass="form-control" runat="server" OnSelectedIndexChanged="ddl_colores_SelectedIndexChanged" AutoPostBack="True">
                                         </asp:DropDownList>
                                     </div>
                                 </div>
                            </div>
 
                           <div class="col">
-                              <div style="background-color:<%: ddl_colores.SelectedItem.Text %>" class="color-articulo"> </div>
+                              <div style="background-color:<%: color %>" class="color-articulo"> </div>
                           </div>
                           <div class="col-md-6">
                                  <!-- Button -->
@@ -178,12 +181,12 @@
          </div>
 
           </div>
-
-       
-        
-           
-
            
         </fieldset>
     </form>
+
+              </contenttemplate>
+
+        </asp:UpdatePanel>
+
 </asp:Content>
