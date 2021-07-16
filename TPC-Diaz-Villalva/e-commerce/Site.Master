@@ -87,6 +87,18 @@
   </div>
 </nav>
 
+        <div class="carrito-lleno">
+            <div class="producto">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006_f2.png" />
+                <div class="info">
+                    <h3>Charizard</h3>
+                    <span> 1 - $500</span>
+                </div>
+                <asp:LinkButton ID="btnEliminarProducto" runat="server"><i class="fas fa-times"></i></asp:LinkButton>
+
+            </div>
+        </div>
+
         <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

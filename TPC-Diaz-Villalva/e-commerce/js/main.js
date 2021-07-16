@@ -57,3 +57,8 @@ $(document).ready(function () {
     });
 });
 
+
+$('.carrito').click(function () {
+
+    $('.carrito-lleno').css({"left":"0"})
+});
