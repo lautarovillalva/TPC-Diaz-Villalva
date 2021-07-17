@@ -42,14 +42,20 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Articulos
+                Lunarsoft
             </div>
 
              <!-- Nav Item - Articulos -->
             <li class="nav-item">
                 <a class="nav-link" href="<%= Page.ResolveUrl("~/Almacen") %>">
                     <i class="fas fa-boxes"></i>
-                    <span>Listar Articulos</span></a>
+                    <span> Articulos</span></a>
+            </li>
+                         <!-- Nav Item - Articulos -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%= Page.ResolveUrl("~/categorias") %>">
+                    <i class="fas fa-boxes"></i>
+                    <span> Categorías</span></a>
             </li>
 
 

@@ -11,25 +11,25 @@ namespace e_commerce
 {
 
 
-    public partial class WebForm2
+    public partial class Modificar_Categoria
     {
 
         /// <summary>
-        /// Control dgv_Categoria.
+        /// Control tbx_nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgv_Categoria;
+        protected global::System.Web.UI.WebControls.TextBox tbx_nombre;
 
         /// <summary>
-        /// Control lbl_Mensaje.
+        /// Control btnModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Mensaje;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

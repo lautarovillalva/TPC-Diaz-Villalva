@@ -61,6 +61,18 @@ namespace DAO
 
             return Convert.ToInt32(tabla.Rows[0][0]);
         }
+        public bool setCategoria(Categoria categoria)
+        {
+            string consulta = "INSERT INTO CATEGORIAS (NOMBRE) VALUES('" + categoria.Nombre + "')";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
     }
 }
