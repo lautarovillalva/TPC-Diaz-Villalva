@@ -2,11 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form class="form-horizontal">
-        <fieldset>
+
 
             <!-- Form Name -->
-            <legend>AGREGAR ARTICULO</legend>
+            <h2>AGREGAR ARTICULO</h2>
 
             <!-- Text input-->
             <div class="form-group">
@@ -94,6 +93,4 @@
                     <a class="btn btn-primary" href="Almacen.aspx">Cancelar</a>
                 </div>
             </div>
-        </fieldset>
-    </form>
 </asp:Content>

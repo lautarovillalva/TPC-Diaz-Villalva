@@ -15,5 +15,15 @@ namespace Negocio
             Color_dao aux = new Color_dao();
             return aux.GetColores();
         }
+        public bool modificarColor(Color color)
+        {
+            Color_dao aux = new Color_dao();
+            return aux.modColor(color);
+        }
+        public bool agregarColor(Color color)
+        {
+            Color_dao aux = new Color_dao();
+            return aux.setColor(color);
+        }
     }
 }

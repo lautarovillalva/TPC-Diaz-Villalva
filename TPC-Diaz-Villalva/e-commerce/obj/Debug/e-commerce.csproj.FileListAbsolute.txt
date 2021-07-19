@@ -1,5 +1,3 @@
-C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csprojAssemblyReference.cache
-C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csprojAssemblyReference.cache
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache
 C:\Users\Tomas\Desktop\Lautaro Proyecto\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\bin\e-commerce.dll.config
@@ -159,6 +157,8 @@ C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\bin\Micro
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\bin\DAO.pdb
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csprojAssemblyReference.cache
+C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.csproj.CopyComplete
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.dll
 C:\Users\Lautaro\GitHub\TPC-Diaz-Villalva\TPC-Diaz-Villalva\e-commerce\obj\Debug\e-commerce.pdb

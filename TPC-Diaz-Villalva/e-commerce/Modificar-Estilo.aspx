@@ -1,13 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Panel.Admin.Master" AutoEventWireup="true" CodeBehind="Modificar-Categoria.aspx.cs" Inherits="e_commerce.Modificar_Categoria" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Panel.Admin.Master" AutoEventWireup="true" CodeBehind="Modificar-Estilo.aspx.cs" Inherits="e_commerce.Modificar_Estilo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-
-    <!-- Form Name -->
-    <h2>Modificar Categoría</h2>
+        <!-- Form Name -->
+    <h2>Modificar Estilo</h2>
 
     <!-- Text input-->
     <div class="form-group">
@@ -21,22 +18,14 @@
             <asp:TextBox ID="tbx_nombre" CssClass="form-control input-group-lg" runat="server" />
         </div>
     </div>
-    <!-- Text input-->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="product_name">IMAGEN </label>
-        <div class="col-md-4">
-            <%--<asp:TextBox ID="tbx_imagen" CssClass="form-control input-group-lg" runat="server" />--%>
-            <input type="file" name="name" value="" />
-        </div>
-    </div>
+    
 
 
     <!-- Button -->
     <div class="form-group">
         <div class="col-md-4">
             <asp:Button ID="btnModificar" OnClick="btnModificar_Click" CssClass="btn btn-primary" Text="Guardar" runat="server" />
-            <a class="btn btn-primary" href="Almacen.aspx">Cancelar</a>
+            <a class="btn btn-primary" href="Estilos.aspx">Cancelar</a>
         </div>
     </div>
-
 </asp:Content>

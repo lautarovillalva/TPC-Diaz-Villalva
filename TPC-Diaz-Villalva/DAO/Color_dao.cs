@@ -31,5 +31,29 @@ namespace DAO
 
             return lista;
         }
+        public bool modColor(Color color)
+        {
+            string consulta = "UPDATE ESTILOS SET NOMBRE='" + color.Nombre + "', CODIGO='"+color.Codigo+"' WHERE ID='" + color.ID + "' ";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool setColor(Color color)
+        {
+            string consulta = "INSERT INTO COLORES(NOMBRE, CODIGO) VALUES ('" + color.Nombre + "', '" + color.Codigo + "') ";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

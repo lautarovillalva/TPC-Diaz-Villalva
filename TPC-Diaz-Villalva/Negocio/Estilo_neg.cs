@@ -15,5 +15,15 @@ namespace Negocio
             Estilo_dao est = new Estilo_dao();
             return est.GetEstilos();
         }
+        public bool modificarEstilo(Estilo estilo)
+        {
+            Estilo_dao aux = new Estilo_dao();
+            return aux.modEstilo(estilo);
+        }
+        public bool agregarEstilo(Estilo estilo)
+        {
+            Estilo_dao aux = new Estilo_dao();
+            return aux.setEstilo(estilo);
+        }
     }
 }

@@ -30,5 +30,30 @@ namespace DAO
 
             return lista;
         }
+
+        public bool modEstilo(Estilo estilo)
+        {
+            string consulta = "UPDATE ESTILOS SET NOMBRE='" + estilo.Nombre + "' WHERE ID='"+estilo.ID+"' ";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public bool setEstilo(Estilo estilo)
+        {
+            string consulta = "INSERT INTO ESTILOS(NOMBRE) VALUES ('"+ estilo.Nombre+"') ";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -57,6 +57,18 @@
                     <i class="fas fa-boxes"></i>
                     <span> Categorías</span></a>
             </li>
+                        <!-- Nav Item - Articulos -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%= Page.ResolveUrl("~/estilos") %>">
+                    <i class="fas fa-boxes"></i>
+                    <span> Estilos</span></a>
+            </li>
+                                    <!-- Nav Item - Articulos -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%= Page.ResolveUrl("~/Colores") %>">
+                    <i class="fas fa-boxes"></i>
+                    <span> Colores</span></a>
+            </li>
 
 
              <!-- Nav Item - Charts -->

@@ -3,11 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <form class="form-horizontal">
-        <fieldset>
-
             <!-- Form Name -->
-            <legend>Agregar Categoría</legend>
+            <H2>AGREGAR CATEGORÍA</H2>
 
             
             <!-- Text input-->
@@ -34,8 +31,6 @@
                     <a class="btn btn-primary" href="categorias.aspx">Cancelar</a>
                 </div>
             </div>
-        </fieldset>
-    </form>
 
 
 </asp:Content>
