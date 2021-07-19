@@ -10,7 +10,11 @@ namespace Negocio
 {
     public class Articulo_neg
     {
-
+        public string DescripcionArticulo(int id)
+        {
+            Articulo_dao aux = new Articulo_dao();
+            return aux.DescArticulo(id);
+        }
         public List<Articulo> ListarArticulos()
         {
             Articulo_dao art = new Articulo_dao();

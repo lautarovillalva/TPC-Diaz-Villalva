@@ -27,6 +27,12 @@ namespace e_commerce
 
         }
 
+        public string BuscarDescripcion(int id)
+        {
+            Articulo_neg articulo_Neg = new Articulo_neg();
+            return articulo_Neg.DescripcionArticulo(id);
+        }
+
         public void buscarArticulo(int ID)
         {
             Articulo_neg neg = new Articulo_neg();

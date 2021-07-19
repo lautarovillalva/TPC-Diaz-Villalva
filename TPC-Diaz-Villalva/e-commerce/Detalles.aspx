@@ -74,9 +74,10 @@ en sucursales seleccionadas
                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                <br />
                                <p>
-                                   Juego de sábanas liso de colores, compuesto por microfibra. Estilo y diseño para la cama de los más chicos.  <br />
+                                   <%:BuscarDescripcion(detalleArticulo.ID) %>
+<%--                                   Juego de sábanas liso de colores, compuesto por microfibra. Estilo y diseño para la cama de los más chicos.  <br />
 Medidas: Para colchón de hasta 0.90 m de ancho x 1.90 m de largo x 0.20 m de alto.  <br />
-Incluye: 3 piezas.
+Incluye: 3 piezas.--%>
 
                                </p>
                            </div>

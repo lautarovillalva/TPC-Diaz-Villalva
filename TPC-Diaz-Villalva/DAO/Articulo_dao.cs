@@ -10,6 +10,18 @@ namespace DAO
 {
     public class Articulo_dao
     {
+        public string DescArticulo(int id)
+        {
+            string descripcion="";
+            string consulta = "SELECT DESCRIPCION_DE_ARTICULOS.DESCRIPCION FROM DESCRIPCION_DE_ARTICULOS WHERE DESCRIPCION_DE_ARTICULOS.ID_ARTICULO='" +id.ToString() +"' ";
+            DataTable tabla = accesoDatos.ObtenerTabla("Descripcion", consulta);
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                descripcion = tabla.Rows[i][0].ToString();
+            }
+            return descripcion;
+
+        }
         AccesoDatos accesoDatos = new AccesoDatos();
         public List<Articulo> GetArticulos()
         {

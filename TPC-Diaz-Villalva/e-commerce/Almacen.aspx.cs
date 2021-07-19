@@ -11,8 +11,7 @@ namespace e_commerce
 {
     public partial class Almacen : System.Web.UI.Page
     {
-
-
+        public int id_aux;
         private int admin = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -43,6 +42,7 @@ namespace e_commerce
             Articulo_neg art = new Articulo_neg();
             rpAdminArticulo.DataSource = art.ListarArticulos();
             rpAdminArticulo.DataBind();
+           
         }
 
     }
