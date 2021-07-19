@@ -13,9 +13,16 @@ namespace e_commerce
     {
         public List<Categoria> listaCategorias = new List<Categoria>();
         public List<Estilo> listaEstilos = new List<Estilo>();
+        public List<Carrito> carrito = new List<Carrito>();
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarListas();
+
+            if (Session["lista"] != null)
+            {
+                carrito = Session["lista"] as List<Carrito>;
+            }
+
         }
 
 

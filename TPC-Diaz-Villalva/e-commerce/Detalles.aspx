@@ -25,6 +25,10 @@ en sucursales seleccionadas
 </div>
 
 
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+        <contenttemplate>
+
     <div class="detalle">
 
           <div class="card mb-3">
@@ -63,7 +67,7 @@ en sucursales seleccionadas
 
                                <div class="botones">
                                    <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" />
-                                   <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito" />
+                                   <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" runat="server" UseSubmitBehavior="False" Text="Agregar al carrito" />
                                </div>
 
                            </div>
@@ -94,6 +98,6 @@ Incluye: 3 piezas.
     </div>
 
   
-
-
+        </contenttemplate>
+    </asp:UpdatePanel>
 </asp:Content>

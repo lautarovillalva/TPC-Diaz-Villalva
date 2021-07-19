@@ -62,3 +62,8 @@ $('.carrito').click(function () {
 
     $('.carrito-lleno').css({"left":"0"})
 });
+
+$('.carrito-lleno #cerrar-carrito').click(function () {
+
+    $('.carrito-lleno').css({ "left": "-1000px" })
+});
