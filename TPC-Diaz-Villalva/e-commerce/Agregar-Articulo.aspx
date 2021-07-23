@@ -7,13 +7,7 @@
             <!-- Form Name -->
             <h2>AGREGAR ARTICULO</h2>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="product_id">ID </label>
-                <div class="col-md-4">
-                    <asp:Label Text="" ID="lbl_id" runat="server" />
-                </div>
-            </div>
+         
 
             <!-- Text input-->
             <div class="form-group">

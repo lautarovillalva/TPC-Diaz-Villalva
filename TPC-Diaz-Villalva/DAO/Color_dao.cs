@@ -33,7 +33,7 @@ namespace DAO
         }
         public bool modColor(Color color)
         {
-            string consulta = "UPDATE ESTILOS SET NOMBRE='" + color.Nombre + "', CODIGO='"+color.Codigo+"' WHERE ID='" + color.ID + "' ";
+            string consulta = "UPDATE COLORES SET NOMBRE='" + color.Nombre + "', CODIGO='"+color.Codigo+"' WHERE ID='" + color.ID + "' ";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)
@@ -45,7 +45,7 @@ namespace DAO
         }
         public bool setColor(Color color)
         {
-            string consulta = "INSERT INTO COLORES(NOMBRE, CODIGO) VALUES ('" + color.Nombre + "', '" + color.Codigo + "') ";
+            string consulta = "INSERT INTO COLORES(NOMBRE, CODIGO) VALUES ('" + color.Nombre.ToString() + "', '" + color.Codigo.ToString() + "') ";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)

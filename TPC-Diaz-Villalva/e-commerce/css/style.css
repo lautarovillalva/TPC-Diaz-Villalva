@@ -536,3 +536,30 @@ a {
         scrollbar-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, 0);
         scrollbar-width: thin;
     }
+
+
+.filtrar .drop {
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    border: solid 1px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.filtrar {
+    margin-bottom: 30px;
+}
+
+    .filtrar .drop option {
+        background: #fff;
+        border: solid 1px;
+        padding: 10px;
+        color: #ee7493;
+        font-weight: 600;
+    }
+
+
+    .carrito{
+        cursor:pointer;
+    }

@@ -42,11 +42,19 @@ namespace Negocio
 
         }
 
-        public List<Articulo> ArticulosFiltrados(string valor)
+        public List<Articulo> ArticulosFiltrados(string valor, bool tipo)
         {
             Articulo_dao aux = new Articulo_dao();
-            return aux.getArticulosFiltrados(valor);
+            return aux.getArticulosFiltrados(valor, tipo);
         }
+
+
+        public List<Articulo> armarFiltro(string categoria, string estilos, string composicion, string medidas)
+        {
+            string consulta = "WHERE CATEGORIAS.NOMBRE = '" + categoria + "' AND  MEDIDAS.NOMBRE = '" + medidas + "' AND  ESTILOS.NOMBRE = '" + estilos + "' AND  COMPOSICIONES.NOMBRE = '" + composicion +"'";
+            return ArticulosFiltrados(consulta, false);
+        }
+
 
     }
 }

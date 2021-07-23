@@ -12,13 +12,13 @@
 
     <div class="col-2">
 
-        <ul class="list-group">
+        <ul class="list-group colores">
             <asp:Repeater ID="rpColores" runat="server">
                 <ItemTemplate>
 
 
-                    <a href="/Modificar-color.aspx?idcol=<%# Eval("ID") %>" class="list-group-item list-group-item-action"><%# Eval("ID") %> - <%# Eval("Nombre") %><div class="color" style="background-color: <%# Eval("Codigo") %>"></div>
-                    </a>
+                   <li><a href="/Modificar-color.aspx?idcol=<%# Eval("ID") %>" class="list-group-item list-group-item-action"><%# Eval("ID") %> - <%# Eval("Nombre") %><div class="color" style="background-color: <%# Eval("Codigo") %>"></div>
+                    </a></li> 
 
 
                 </ItemTemplate>

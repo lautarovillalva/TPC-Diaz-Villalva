@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,8 @@ namespace e_commerce
 {
     public partial class Agregar_Categoria : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,8 +25,17 @@ namespace e_commerce
             Categoria nuevo = new Categoria();
             nuevo.Nombre = tbx_nombre.Text;
 
+            if (FileImg.HasFile)
+            {
+                FileImg.SaveAs(Server.MapPath("~/img/categorias/" + FileImg.FileName));
+            }
+
             categoria_Neg.agregarCategoria(nuevo);
             Response.Redirect("Categorias.aspx");
         }
+
+
+   
+
     }
 }

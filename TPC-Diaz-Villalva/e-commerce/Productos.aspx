@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="e_commerce.Productos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+      
 
    <div class="banner-video">
         <iframe src="https://player.vimeo.com/video/441604150?autoplay=1&loop=1&muted=1" frameborder="0"></iframe>
@@ -23,22 +26,42 @@ en sucursales seleccionadas
     </div>
   </div>
 </div>
-    <fieldset>
-        <h3>CATEGORÍAS</h3>
-    <asp:CheckBoxList ID="cbl_categorias" RepeatDirection="Horizontal" runat="server">
-    </asp:CheckBoxList>
-    </fieldset>
-    <fieldset>
-        <h3>ESTILOS</h3>
-    <asp:CheckBoxList ID="cbl_estilos" RepeatDirection="Horizontal" runat="server">
-    </asp:CheckBoxList>
-    </fieldset>
-    <fieldset>
-        <h3>MEDIDAS</h3>
-    <asp:CheckBoxList ID="cbl_medidas" RepeatDirection="Horizontal" runat="server">
-    </asp:CheckBoxList>
-    </fieldset>
-    <asp:Button ID="btn_filtrar" Text="Filtrar" OnClick="btn_filtrar_Click" runat="server" />
+
+
+   
+  
+     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <contenttemplate>
+
+<%--    <div class="container filtrar">
+       <div class="row">
+         <div class="col-sm">
+            <asp:DropDownList class="drop"  ID="drpCategorias" runat="server"  ></asp:DropDownList>
+         </div>
+         <div class="col-sm">
+           <asp:DropDownList class="drop" ID="drpEstilos" runat="server"></asp:DropDownList>
+           
+         </div>
+         <div class="col-sm">
+           <asp:DropDownList class="drop" ID="drpCompsiciones" runat="server"></asp:DropDownList>
+         </div>
+         <div class="col-sm">
+            <asp:DropDownList class="drop" ID="drpMedidas" runat="server"></asp:DropDownList>
+         </div>
+         <div class="col-sm">
+           <asp:Button class="btn btn-outline-primary btn-lg btn-block" ID="btn_filtrar" Text="Filtrar" OnClick="btn_filtrar_Click" runat="server"   UseSubmitBehavior="False" />
+             
+         </div>
+
+       </div>
+
+        <br />
+        <hr />
+   </div>--%>
+         
+
+  <asp:Label ID="texto" runat="server"></asp:Label>
+
 
     <div class="container-fluid productos">
          <div class="row row-cols-1 row-cols-md-4">
@@ -66,7 +89,8 @@ en sucursales seleccionadas
    </div>
 
 
-         
+                  </contenttemplate>
+        </asp:UpdatePanel>
 
 
 

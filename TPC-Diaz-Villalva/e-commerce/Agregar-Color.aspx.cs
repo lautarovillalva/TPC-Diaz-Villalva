@@ -19,12 +19,15 @@ namespace e_commerce
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Color_neg color_Neg = new Color_neg();
-            Color nuevo = new Color();
+            Color color = new Color
+            {
+                Nombre = tbx_nombre.Text,
+                Codigo = tbx_codigo.Text
+            };
+      
 
-            nuevo.Nombre = tbx_nombre.Text;
-
-            color_Neg.agregarColor(nuevo);
-            Response.Redirect("Estilos.aspx");
+            color_Neg.agregarColor(color);
+            Response.Redirect("Colores.aspx");
         }
     }
 }
