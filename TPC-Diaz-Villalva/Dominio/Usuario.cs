@@ -21,6 +21,15 @@ namespace Dominio
         {
 
         }
+        public Usuario(int id)
+        {
+            this.ID = id;
+        }
+        public Usuario( int id, string mail)
+        {
+            this.ID = id;
+            this.Mail = mail;
+        }
 
 
     }

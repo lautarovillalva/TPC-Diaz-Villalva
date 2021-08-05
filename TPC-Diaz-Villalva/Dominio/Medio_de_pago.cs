@@ -15,5 +15,11 @@ namespace Dominio
         {
             return Nombre;
         }
+
+        public Medio_de_pago(int id, string nombre)
+        {
+            this.ID = id;
+            this.Nombre = nombre;
+        }
     }
 }

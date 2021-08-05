@@ -19,5 +19,12 @@ namespace Dominio
         {
             return Nombre;
         }
+
+        public Estado(int id, string nombre)
+        {
+            this.ID = id;
+            this.Nombre = nombre;
+
+        }
     }
 }
