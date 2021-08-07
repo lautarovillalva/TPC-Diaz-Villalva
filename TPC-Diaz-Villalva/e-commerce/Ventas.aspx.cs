@@ -14,8 +14,8 @@ namespace e_commerce
         protected void Page_Load(object sender, EventArgs e)
         {
             Venta_neg venta_Neg = new Venta_neg();
-            dgv_ventas.DataSource = venta_Neg.listarVentas();
-            dgv_ventas.DataBind();
+            rpVentas.DataSource = venta_Neg.listarVentas();
+            rpVentas.DataBind();
 
 
         }

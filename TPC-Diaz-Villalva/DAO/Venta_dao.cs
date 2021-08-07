@@ -11,7 +11,31 @@ namespace DAO
     public class Venta_dao
     {
         AccesoDatos accesoDatos = new AccesoDatos();
+        public Venta GetVenta(int idventa)
+        {
+            Venta venta = new Venta();
+            string consulta = "SELECT VENTAS.ID, VENTAS.FECHA, VENTAS.ID_USUARIO, USUARIOS.MAIL, VENTAS.ID_ESTADO, ESTADOS.NOMBRE AS ESTADO, VENTAS.ID_MPAGO, MEDIOS_DE_PAGO.NOMBRE AS MPAGO FROM VENTAS INNER JOIN USUARIOS ON USUARIOS.ID=VENTAS.ID_USUARIO INNER JOIN ESTADOS ON ESTADOS.ID=VENTAS.ID_ESTADO INNER JOIN MEDIOS_DE_PAGO ON MEDIOS_DE_PAGO.ID=VENTAS.ID_MPAGO WHERE VENTAS.ID="+ idventa.ToString() +"";
+            DataTable tabla = accesoDatos.ObtenerTabla("venta", consulta);
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                venta.ID = Convert.ToInt32(tabla.Rows[i][0]);
+                venta.Fecha = Convert.ToDateTime(tabla.Rows[i][1]);
 
+                Usuario usuario = new Usuario(Convert.ToInt32(tabla.Rows[i][2]), tabla.Rows[i][3].ToString());
+                venta.usuario = usuario;
+
+                Estado estado = new Estado(Convert.ToInt32(tabla.Rows[i][4]), tabla.Rows[i][5].ToString());
+                venta.estado = estado;
+
+                Medio_de_pago medio_De_Pago = new Medio_de_pago(Convert.ToInt32(tabla.Rows[i][6]), tabla.Rows[i][7].ToString());
+                venta.pago = medio_De_Pago;
+
+                venta.Total = getTotal(venta.ID);
+                venta.Cantidad = getCantidad(venta.ID);
+                venta.lista = getArticulos(venta.ID);
+            }
+            return venta;
+        }
         public List<Venta> GetVentas()
         {
             List<Venta> lista = new List<Venta>();
@@ -91,11 +115,24 @@ namespace DAO
             DataTable tabla = accesoDatos.ObtenerTabla("cantidad", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-                cantidad = Convert.ToInt32(tabla.Rows[0][0]);
+                cantidad = Convert.ToInt32(tabla.Rows[i][0]);
             }
 
             return cantidad;
         }
-         
+
+        public bool modEstado_venta(int id_venta, int id_estado)
+        {
+            string consulta = "UPDATE VENTAS SET ID_ESTADO='"+id_estado.ToString()+"' WHERE VENTAS.ID='"+id_venta.ToString()+"'";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }

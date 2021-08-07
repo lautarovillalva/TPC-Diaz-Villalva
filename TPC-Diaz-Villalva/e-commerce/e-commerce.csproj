@@ -127,6 +127,7 @@
     <Content Include="css\admin.css" />
     <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Detalle-venta.aspx" />
     <Content Include="Detalles.aspx" />
     <Content Include="Estilos.aspx" />
     <Content Include="favicon.ico" />
@@ -346,6 +347,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle-venta.aspx.cs">
+      <DependentUpon>Detalle-venta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detalle-venta.aspx.designer.cs">
+      <DependentUpon>Detalle-venta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Detalles.aspx.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>

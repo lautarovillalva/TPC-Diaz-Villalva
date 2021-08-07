@@ -45,6 +45,7 @@
     <Compile Include="Categoria_neg.cs" />
     <Compile Include="Color_neg.cs" />
     <Compile Include="Composicion_neg.cs" />
+    <Compile Include="Estado_neg.cs" />
     <Compile Include="Estilo_neg.cs" />
     <Compile Include="Medida_neg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

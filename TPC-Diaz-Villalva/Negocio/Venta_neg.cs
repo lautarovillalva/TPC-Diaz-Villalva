@@ -15,5 +15,10 @@ namespace Negocio
             Venta_dao venta_Dao = new Venta_dao();
             return venta_Dao.GetVentas();
         }
+        public bool modifcarEstado_venta(int id_venta, int id_estado)
+        {
+            Venta_dao venta_Dao = new Venta_dao();
+            return venta_Dao.modEstado_venta(id_venta, id_estado);
+        }
     }
 }

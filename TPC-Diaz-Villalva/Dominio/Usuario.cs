@@ -30,7 +30,10 @@ namespace Dominio
             this.ID = id;
             this.Mail = mail;
         }
-
+        public override string ToString()
+        {
+            return Mail;
+        }
 
     }
 }
