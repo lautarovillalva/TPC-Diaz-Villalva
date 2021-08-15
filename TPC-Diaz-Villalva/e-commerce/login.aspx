@@ -28,15 +28,16 @@
                    <form id="form1" runat="server">
                        <img  src="img/logo-color.png"/>
                       <div class="input">
-                          <label>Usuario o correo electronico</label>
+                          <label>CORREO ELECTRÓNICO</label>
                           <asp:TextBox ID="txtUsuario" runat="server" ></asp:TextBox>
                       </div>
                       <div class="input">
-                           <label>Contraseña</label>
+                           <label>CONTRASEÑA</label>
                           <asp:TextBox TextMode="Password" ID="txtPassword" runat="server"></asp:TextBox>
                       </div>
                       <div class="input">    
                           <asp:Button ID="btnLogin" OnClick="btnLogin_Click" runat="server" Text="LOGIN" />
+                          <asp:Button ID="btnRegistrarse" OnClick="btnRegistrarse_Click" runat="server" Text="REGISTRARSE" />
                       </div>
                       
                    </form>

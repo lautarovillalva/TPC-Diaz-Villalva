@@ -64,21 +64,30 @@ namespace e_commerce
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Carrito aux = new Carrito();
 
             if (!ArticuloExistente(detalleArticulo.ID.ToString()))
             {
-                Carrito aux = new Carrito
-                {
-                    Articulo = detalleArticulo,
-                    Cantidad = 1,
-                    Total = detalleArticulo.Precio * 1
-                    
-                };
-
+                aux.Articulo = detalleArticulo;
+                aux.Cantidad = 1;
+                aux.Total = detalleArticulo.Precio * 1;
+                
                 carrito.Add(aux);
             }
+            else
+            {
+                foreach (var item in carrito)
+                {
+                    if (item.Articulo.ID == detalleArticulo.ID)
+                    {
+                        item.Cantidad++;
+                        item.Total = item.Total + detalleArticulo.Precio;
+                    }
 
-
+                }
+            }
+            
+            
             Session["lista"] = carrito;
         }
     }

@@ -25,5 +25,10 @@ namespace e_commerce
 
            
         }
+
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

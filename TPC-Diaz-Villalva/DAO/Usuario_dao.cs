@@ -14,7 +14,7 @@ namespace DAO
         public List<Usuario> GetUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
-            string consulta = "SELECT USUARIOS.ID, USUARIOS.MAIL, USUARIOS.CONTRASEÑA, USUARIOS.NOMBRE, USUARIOS.APELLIDO, USUARIOS.NACIMIENTO, USUARIOS.TELEFONO, USUARIOS.DNI FROM USUARIOS";
+            string consulta = "SELECT USUARIOS.ID, USUARIOS.MAIL, USUARIOS.CONTRASEÑA, USUARIOS.NOMBRE, USUARIOS.APELLIDO FROM USUARIOS";
             DataTable tabla = accesoDatos.ObtenerTabla("Usuarios", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
@@ -25,9 +25,7 @@ namespace DAO
                     password = tabla.Rows[i][2].ToString(),
                     Nombre = tabla.Rows[i][3].ToString(),
                     Apellido = tabla.Rows[i][4].ToString(),
-                    FechaNacimiento= Convert.ToDateTime(tabla.Rows[i][5]),
-                    Telefono= tabla.Rows[i][6].ToString(),
-                    Dni= tabla.Rows[i][7].ToString(),
+                    
                 };
 
 
@@ -35,6 +33,19 @@ namespace DAO
             }
 
             return lista;
+        }
+
+        public bool setUsuario(Usuario usuario)
+        {
+            string consulta = "insert into USUARIOS(MAIL, CONTRASEÑA, NOMBRE, APELLIDO) values ('"+usuario.Mail+"', '"+usuario.password+"', '"+usuario.Nombre+"', '"+usuario.Apellido+"')";
+            int filas = accesoDatos.EjecutarConsulta(consulta);
+
+            if (filas > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

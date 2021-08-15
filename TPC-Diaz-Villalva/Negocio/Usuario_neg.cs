@@ -16,6 +16,11 @@ namespace Negocio
             Usuario_dao us = new Usuario_dao();
             return us.GetUsuarios();
         }
+        public bool agregarUsuario(Usuario usuario)
+        {
+            Usuario_dao aux = new Usuario_dao();
+            return aux.setUsuario(usuario);
+        }
 
     }
 }
