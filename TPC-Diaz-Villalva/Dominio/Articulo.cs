@@ -19,6 +19,7 @@ namespace Dominio
         public Estilo estilo { get; set; }
         public Color color { get; set; }
         public Categoria categoria { get; set; }
+        public int visible { get; set; }
 
     }
 }

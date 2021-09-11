@@ -5,8 +5,17 @@
     
     <a   class="btn btn-primary" href="Agregar-Articulo.aspx">Agregar Articulo</a>
     <hr />
+
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <contenttemplate>
+
+      
+
       <asp:Repeater ID="rpAdminArticulo" runat="server">
             <ItemTemplate>
+
+
       <div class="row articulos">
 
                         <!-- Pie Chart -->
@@ -24,10 +33,16 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
+
+                                            <!-- MODIFICAR ARTICULO -->
                                             <a class="dropdown-item" href="/Modificar-articulo.aspx?idprod=<%# Eval("ID") %>">Modificar</a>
+
+                                            <!-- MODIFICAR CLONAR -->
                                             <a class="dropdown-item" href="#">Clonar</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Eliminar</a>
+
+                                            <!-- MODIFICAR ELIMINAR -->
+                                            <asp:Button class="dropdown-item" ID="btnEliminarProducto" runat="server" Text="Eliminar" OnCommand="btnEliminarProducto_Command" CommandArgument='<%# Eval("ID") %>' CommandName="eventoEliminar"  UseSubmitBehavior="False"/>
                                         </div>
                                     </div>
                                 </div>
@@ -39,7 +54,7 @@
 
                                     <div class="descripcion">
                                         <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                                            HOLA Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
                                             
                                         </p>
                                           
@@ -58,7 +73,11 @@
                             </div>
                         </div>
                     </div>
-
          </ItemTemplate>
     </asp:Repeater>
+
+
+    </contenttemplate>
+            </asp:UpdatePanel>
+
 </asp:Content>

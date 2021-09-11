@@ -40,10 +40,31 @@ namespace e_commerce
         {
 
             Articulo_neg art = new Articulo_neg();
-            rpAdminArticulo.DataSource = art.ListarArticulos();
+            List<Articulo> lista = art.ListarArticulos();
+            List<Articulo> listaVisibles = new List<Articulo>();
+
+            foreach(Articulo item in lista)
+            {
+                if(item.visible == 1)
+                {
+                    listaVisibles.Add(item);
+                }
+            }
+
+            rpAdminArticulo.DataSource = listaVisibles;
             rpAdminArticulo.DataBind();
            
         }
 
+        protected void btnEliminarProducto_Command(object sender, CommandEventArgs e)
+        {
+            Articulo_neg art = new Articulo_neg();
+
+            if ( e.CommandName == "eventoEliminar")
+            {
+                art.bajaArticulo(e.CommandArgument.ToString());
+                mostrarArticulos();
+            }
+        }
     }
 }

@@ -34,6 +34,14 @@ namespace Negocio
             return aux.modArticulo(articulo);
 
         }
+
+        public bool bajaArticulo(string id)
+        {
+            Articulo_dao aux = new Articulo_dao();
+            return aux.bajaLogicaArticulo(id, true);
+        }
+
+
         public bool agregarArticulo(Articulo articulo)
         {
 
