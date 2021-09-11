@@ -35,10 +35,10 @@ namespace Negocio
 
         }
 
-        public bool bajaArticulo(string id)
+        public bool bajaArticulo(string id, bool baja)
         {
             Articulo_dao aux = new Articulo_dao();
-            return aux.bajaLogicaArticulo(id, true);
+            return aux.bajaLogicaArticulo(id, baja);
         }
 
 

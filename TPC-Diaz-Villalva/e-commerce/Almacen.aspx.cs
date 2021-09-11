@@ -42,18 +42,28 @@ namespace e_commerce
             Articulo_neg art = new Articulo_neg();
             List<Articulo> lista = art.ListarArticulos();
             List<Articulo> listaVisibles = new List<Articulo>();
+            List<Articulo> listaNoVisibles = new List<Articulo>();
 
-            foreach(Articulo item in lista)
+            foreach (Articulo item in lista)
             {
                 if(item.visible == 1)
                 {
                     listaVisibles.Add(item);
                 }
+
+                else
+                {
+                    listaNoVisibles.Add(item);
+                }
             }
 
             rpAdminArticulo.DataSource = listaVisibles;
             rpAdminArticulo.DataBind();
-           
+
+            rpAdminArticuloPapelera.DataSource = listaNoVisibles;
+            rpAdminArticuloPapelera.DataBind();
+
+
         }
 
         protected void btnEliminarProducto_Command(object sender, CommandEventArgs e)
@@ -62,7 +72,18 @@ namespace e_commerce
 
             if ( e.CommandName == "eventoEliminar")
             {
-                art.bajaArticulo(e.CommandArgument.ToString());
+                art.bajaArticulo(e.CommandArgument.ToString(), true);
+                mostrarArticulos();
+            }
+        }
+
+        protected void btnSalvar_Command(object sender, CommandEventArgs e)
+        {
+            Articulo_neg art = new Articulo_neg();
+
+            if (e.CommandName == "eventoEliminar")
+            {
+                art.bajaArticulo(e.CommandArgument.ToString(), false);
                 mostrarArticulos();
             }
         }
