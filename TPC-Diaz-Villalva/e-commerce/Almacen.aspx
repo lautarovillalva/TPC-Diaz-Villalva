@@ -89,22 +89,32 @@
        </div>
        <div class="tab-pane fade" id="Papelera" role="tabpanel" aria-labelledby="Papelera-tab">
 
-            <br />
+               <br />
 
-               <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+      <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <contenttemplate>
+
+
+               <!-- ELIMINAR SELECCION -->
+               <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Eliminar Articulos" OnClick="btnEliminarSeleccion_Click" UseSubmitBehavior="False"/>
+               <asp:Label ID="Label1" runat="server" Text="Aca va el texto"></asp:Label>
 
             <asp:Repeater ID="rpAdminArticuloPapelera" runat="server">
             <ItemTemplate>
-                <div class="row articulos">
 
+                <div class="row articulos">
                         <!-- Pie Chart -->
                         <div class="col-xl-12 col-lg-5">
                             <div class="card articulo-eliminado shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 
-                                    <h6 class="m-0 font-weight-bold text-primary"><%# Eval("Nombre") %></h6>
+
+                                    <div class="titulo-borrador">
+                                        <asp:CheckBox ID="chkSeleccion"  runat="server"  ViewStateMode="Enabled"  ValidateRequestMode="Enabled" />
+                                       <h6 class="m-0 font-weight-bold text-primary"><%# Eval("Nombre") %></h6>
+                                    </div>
+
 
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"

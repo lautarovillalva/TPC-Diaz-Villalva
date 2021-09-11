@@ -213,3 +213,13 @@
         transform: scale3d(1.2, 1.2, 0.3);
         background: #ff7699;
     }
+
+
+.titulo-borrador {
+    display: flex;
+    align-items: center;
+}
+
+    .titulo-borrador h6 {
+        margin-left: 15px !important;
+    }

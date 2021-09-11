@@ -14,6 +14,11 @@ namespace e_commerce
         public int id_aux;
         private int admin = 0;
 
+        public List<Articulo> listaParaEliminar;
+        private List<Articulo> listaVisibles;
+        private List<Articulo> listaNoVisibles;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -41,8 +46,10 @@ namespace e_commerce
 
             Articulo_neg art = new Articulo_neg();
             List<Articulo> lista = art.ListarArticulos();
-            List<Articulo> listaVisibles = new List<Articulo>();
-            List<Articulo> listaNoVisibles = new List<Articulo>();
+            listaVisibles = new List<Articulo>();
+            listaNoVisibles = new List<Articulo>();
+
+
 
             foreach (Articulo item in lista)
             {
@@ -86,6 +93,39 @@ namespace e_commerce
                 art.bajaArticulo(e.CommandArgument.ToString(), false);
                 mostrarArticulos();
             }
+        }
+
+     
+
+        protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
+        {
+                 listaParaEliminar = new List<Articulo>();
+                 Articulo_neg art = new Articulo_neg();
+
+                 int cont = 0;
+                
+                 foreach (RepeaterItem articulo in rpAdminArticuloPapelera.Items)
+                 {
+                     cont++;
+                     CheckBox i = articulo.FindControl("chkSeleccion") as CheckBox;
+
+                     if (Request.Form[i.UniqueID] != null && Request.Form[i.UniqueID] == "on")
+                     {
+                         listaParaEliminar.Add(listaNoVisibles[cont - 1]);
+                    
+                     }
+                
+                 }
+
+                 Label1.Text = "";
+
+                 foreach (Articulo item in listaParaEliminar)
+                 { 
+                     art.eliminarArticulo(item);
+                 }
+
+                 mostrarArticulos();
+
         }
     }
 }
