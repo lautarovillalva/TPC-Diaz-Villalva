@@ -14,7 +14,7 @@ namespace e_commerce
         public int id_aux;
         private int admin = 0;
 
-        public List<Articulo> listaParaEliminar;
+        public List<Articulo> listaParaEliminar = new List<Articulo>();
         private List<Articulo> listaVisibles;
         private List<Articulo> listaNoVisibles;
 
@@ -38,6 +38,12 @@ namespace e_commerce
             {
                 Response.Redirect("login.aspx");
             }
+
+            if (Session["Eliminados"] != null)
+            {
+                listaParaEliminar = Session["Eliminados"] as List<Articulo>;
+            }
+
 
         }
 
@@ -99,33 +105,58 @@ namespace e_commerce
 
         protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
         {
-                 listaParaEliminar = new List<Articulo>();
-                 Articulo_neg art = new Articulo_neg();
 
-                 int cont = 0;
-                
-                 foreach (RepeaterItem articulo in rpAdminArticuloPapelera.Items)
-                 {
-                     cont++;
-                     CheckBox i = articulo.FindControl("chkSeleccion") as CheckBox;
+            Articulo_neg art = new Articulo_neg();
 
-                     if (Request.Form[i.UniqueID] != null && Request.Form[i.UniqueID] == "on")
-                     {
-                         listaParaEliminar.Add(listaNoVisibles[cont - 1]);
-                    
-                     }
-                
-                 }
+            foreach (Articulo item in listaParaEliminar)
+            { 
+                art.eliminarArticulo(item);
+            }
 
-                 Label1.Text = "";
+            ocultarAlerta();
+            Session["Eliminados"] = new List<Articulo>();
+            mostrarArticulos();
 
-                 foreach (Articulo item in listaParaEliminar)
-                 { 
-                     art.eliminarArticulo(item);
-                 }
+        }
 
-                 mostrarArticulos();
+        protected void btnAddListEliminados_Click(object sender, EventArgs e)
+        {
 
+            int cont = 0;
+
+            foreach (RepeaterItem articulo in rpAdminArticuloPapelera.Items)
+            {
+                cont++;
+                CheckBox i = articulo.FindControl("chkSeleccion") as CheckBox;
+
+                if (Request.Form[i.UniqueID] != null && Request.Form[i.UniqueID] == "on")
+                {
+                    listaParaEliminar.Add(listaNoVisibles[cont - 1]);
+
+                }
+
+            }
+
+            Session["Eliminados"] = listaParaEliminar;
+
+            mostrarAlerta();
+
+        }
+
+        public void mostrarAlerta()
+        {
+            alert.Attributes.CssStyle.Add("display", "flex");
+        }
+
+        public void ocultarAlerta()
+        {
+            alert.Attributes.CssStyle.Add("display", "none");
+        }
+
+        protected void btnCancelarEliminacion_Click(object sender, EventArgs e)
+        {
+            Session["Eliminados"] = new List<Articulo>();
+            ocultarAlerta();
         }
     }
 }

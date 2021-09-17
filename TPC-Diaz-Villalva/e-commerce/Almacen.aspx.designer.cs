@@ -42,6 +42,24 @@ namespace e_commerce
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
+        /// Control btnAddListEliminados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddListEliminados;
+
+        /// <summary>
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+
+        /// <summary>
         /// Control btnEliminarSeleccion.
         /// </summary>
         /// <remarks>
@@ -51,13 +69,13 @@ namespace e_commerce
         protected global::System.Web.UI.WebControls.Button btnEliminarSeleccion;
 
         /// <summary>
-        /// Control Label1.
+        /// Control btnCancelarEliminacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button btnCancelarEliminacion;
 
         /// <summary>
         /// Control rpAdminArticuloPapelera.

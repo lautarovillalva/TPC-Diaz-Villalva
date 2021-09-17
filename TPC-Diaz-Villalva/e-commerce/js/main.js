@@ -69,8 +69,10 @@ $('.carrito-lleno #cerrar-carrito').click(function () {
 });
 
 
-$('.salvar-articulo').click(function () {
 
-    alert("hola");
 
-});
+$('.btn-cancelar-eliminacion').click(function () {
+
+    $('.alerta-eliminar').slideDown()
+
+})

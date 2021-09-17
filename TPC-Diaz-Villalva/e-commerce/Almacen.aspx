@@ -90,14 +90,32 @@
        <div class="tab-pane fade" id="Papelera" role="tabpanel" aria-labelledby="Papelera-tab">
 
                <br />
+               <!-- ELIMINAR SELECCION -->
+
+            
+             
 
       <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <contenttemplate>
 
+           <asp:Button class="btn btn-danger btn-alerta" ID="btnAddListEliminados" OnClick="btnAddListEliminados_Click" runat="server" Text="Vaciar papelera" />
 
-               <!-- ELIMINAR SELECCION -->
-               <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Eliminar Articulos" OnClick="btnEliminarSeleccion_Click" UseSubmitBehavior="False"/>
-               <asp:Label ID="Label1" runat="server" Text="Aca va el texto"></asp:Label>
+               <div runat="server" id="alert" class="alerta-eliminar">
+
+                   <h3>¿Seguro que desea elimnar los siguientes articulos?</h3>
+                   <ul>
+                   <% foreach (Dominio.Articulo item in listaParaEliminar)
+                       { %>
+                              <li> <img src=" <%: item.Imagen %> " />  <span> <%: item.Nombre %> </span></li>
+                      <%} %>
+                    </ul>  
+                   
+                   <div class="botones">
+                     <asp:Button class="btn btn-dark" ID="btnEliminarSeleccion" runat="server" Text="Vaciar" OnClick="btnEliminarSeleccion_Click" UseSubmitBehavior="False"/>
+                     <asp:Button class="btn btn-dark btn-cancelar-eliminacion" ID="btnCancelarEliminacion" runat="server" Text="Cancelar" OnClick="btnCancelarEliminacion_Click" />
+                   </div>
+
+               </div>
 
             <asp:Repeater ID="rpAdminArticuloPapelera" runat="server">
             <ItemTemplate>
@@ -111,7 +129,7 @@
 
 
                                     <div class="titulo-borrador">
-                                        <asp:CheckBox ID="chkSeleccion"  runat="server"  ViewStateMode="Enabled"  ValidateRequestMode="Enabled" />
+                                        <asp:CheckBox class="check" ID="chkSeleccion"  runat="server"  ViewStateMode="Enabled"  ValidateRequestMode="Enabled" />
                                        <h6 class="m-0 font-weight-bold text-primary"><%# Eval("Nombre") %></h6>
                                     </div>
 
