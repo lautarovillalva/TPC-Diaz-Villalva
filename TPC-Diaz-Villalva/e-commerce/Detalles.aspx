@@ -66,7 +66,7 @@ en sucursales seleccionadas
                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                                <div class="botones">
-                                   <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" />
+                                   <%--<asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" />--%>
                                    <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" runat="server" UseSubmitBehavior="False" Text="Agregar al carrito" />
                                </div>
 

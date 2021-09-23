@@ -25,6 +25,17 @@ namespace e_commerce
 
         }
 
+        public double CalcularTotal()
+        {
+            double total = 0;
+            foreach (Carrito item in carrito)
+            {
+                total += item.Total;
+
+            }
+            return total;
+        }
+
 
         public void cargarListas()
         {

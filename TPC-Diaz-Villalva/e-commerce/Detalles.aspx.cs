@@ -81,7 +81,7 @@ namespace e_commerce
                     if (item.Articulo.ID == detalleArticulo.ID)
                     {
                         item.Cantidad++;
-                        item.Total = item.Total + detalleArticulo.Precio;
+                        item.Total += detalleArticulo.Precio;
                     }
 
                 }
