@@ -29,16 +29,17 @@
                        <img  src="img/logo-color.png"/>
                       <div class="input">
                           <label>CORREO ELECTRÓNICO</label>
-                          <asp:TextBox ID="txtUsuario" runat="server" ></asp:TextBox>
+                          <asp:TextBox ID="txtMail" runat="server" ></asp:TextBox>
                       </div>
                       <div class="input">
                            <label>CONTRASEÑA</label>
-                          <asp:TextBox TextMode="Password" ID="txtPassword" runat="server"></asp:TextBox>
+                          <asp:TextBox TextMode="Password" ID="txtContraseña1" runat="server"></asp:TextBox>
                       </div>
                       <div class="input">    
                           <asp:Button ID="btnLogin" OnClick="btnLogin_Click" runat="server" Text="LOGIN" />
-                          <asp:Button ID="btnRegistrarse" OnClick="btnRegistrarse_Click" runat="server" Text="REGISTRARSE" />
+                          
                       </div>
+                       <a href="Registrarse.aspx">¿No tienes cuenta? Regístrate!</a>
                       
                    </form>
             </div>

@@ -17,45 +17,50 @@ namespace e_commerce
 
         }
 
-        private bool CargarUsuario()
+        protected void btnCrearCuenta_Click(object sender, EventArgs e)
         {
-            bool nuevo = true;
-            nuevo_usuario.Apellido = txtApellido.Text;
-            nuevo_usuario.Nombre = txtNombre.Text;
-            nuevo_usuario.Mail = txtUsuario.Text;
 
-            Usuario_neg usuario_Neg = new Usuario_neg();
-            usuarios = usuario_Neg.ListarUsuarios();
-
-            foreach (Usuario item in usuarios)
-            {
-                if (item.Mail == nuevo_usuario.Mail)
-                {
-                    txtApellido.Text = "";
-                    txtNombre.Text = "";
-                    txtPassword.Text = "";
-                    txtUsuario.Text = "USUARIO YA REGISTRADO.";
-
-                    nuevo = false;
-                }
-            }
-
-            return nuevo;
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (CargarUsuario())
-            {
-                Usuario_neg usuario_Neg = new Usuario_neg();
+        //    private bool CargarUsuario()
+        //    {
+        //        bool nuevo = true;
+        //        nuevo_usuario.Apellido = txtApellido.Text;
+        //        nuevo_usuario.Nombre = txtNombre.Text;
+        //        nuevo_usuario.Mail = txtUsuario.Text;
 
-                if (usuario_Neg.agregarUsuario(nuevo_usuario))
-                {
-                    Response.Redirect("Productos.aspx");
-                }
+        //        Usuario_neg usuario_Neg = new Usuario_neg();
+        //        usuarios = usuario_Neg.ListarUsuarios();
 
-            }
-            
-        }
+        //        foreach (Usuario item in usuarios)
+        //        {
+        //            if (item.Mail == nuevo_usuario.Mail)
+        //            {
+        //                txtApellido.Text = "";
+        //                txtNombre.Text = "";
+        //                txtPassword.Text = "";
+        //                txtUsuario.Text = "USUARIO YA REGISTRADO.";
+
+        //                nuevo = false;
+        //            }
+        //        }
+
+        //        return nuevo;
+        //    }
+
+        //    protected void btnLogin_Click(object sender, EventArgs e)
+        //    {
+        //        if (CargarUsuario())
+        //        {
+        //            Usuario_neg usuario_Neg = new Usuario_neg();
+
+        //            if (usuario_Neg.agregarUsuario(nuevo_usuario))
+        //            {
+        //                Response.Redirect("Productos.aspx");
+        //            }
+
+        //        }
+
+        //    }
     }
 }

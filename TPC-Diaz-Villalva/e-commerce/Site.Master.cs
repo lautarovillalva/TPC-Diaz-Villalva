@@ -11,6 +11,7 @@ namespace e_commerce
 {
     public partial class SiteMaster : MasterPage
     {
+        public Usuario usuario = new Usuario();
         public List<Categoria> listaCategorias = new List<Categoria>();
         public List<Estilo> listaEstilos = new List<Estilo>();
         public List<Carrito> carrito = new List<Carrito>();
@@ -21,6 +22,14 @@ namespace e_commerce
             if (Session["lista"] != null)
             {
                 carrito = Session["lista"] as List<Carrito>;
+            }
+            if (!IsPostBack)
+            {
+                if (Session["usuario"] != null)
+                {
+                    usuario = Session["usuario"] as Usuario;
+                }
+
             }
 
         }
@@ -50,6 +59,12 @@ namespace e_commerce
         protected void txtFiltrar_TextChanged(object sender, EventArgs e)
         {
             Response.Redirect("Productos.aspx?valor="+ txtFiltrar.Text);
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["usuario"] = null;
+            Response.Redirect("/default.aspx");
         }
     }
 }

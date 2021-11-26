@@ -47,5 +47,44 @@ namespace DAO
 
             return false;
         }
+        public static bool existeUsuario(Usuario usuario)
+        {
+            string consulta = "select * from USUARIOS where USUARIOS.MAIL='" + usuario.Mail + "'";
+            AccesoDatos accesoDatos = new AccesoDatos();
+            DataTable tabla = accesoDatos.ObtenerTabla("tabla", consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static Usuario buscarUsuario(string mail)
+        {
+            Usuario encontrado = new Usuario();
+            AccesoDatos accesoDatos = new AccesoDatos();
+            string consulta = "select USUARIOS.ID, USUARIOS.MAIL, USUARIOS.CONTRASEÑA, USUARIOS.NOMBRE, USUARIOS.APELLIDO from USUARIOS where USUARIOS.MAIL='" + mail + "'";
+            DataTable tabla = accesoDatos.ObtenerTabla("Usuario", consulta);
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                Usuario usuario = new Usuario
+                {
+                    ID = Convert.ToInt32(tabla.Rows[i][0]),
+                    Mail = tabla.Rows[i][1].ToString(),
+                    password = tabla.Rows[i][2].ToString(),
+                    Nombre = tabla.Rows[i][3].ToString(),
+                    Apellido = tabla.Rows[i][4].ToString(),
+
+                };
+
+
+                encontrado = usuario;
+            }
+
+            return encontrado;
+
+        }
     }
 }

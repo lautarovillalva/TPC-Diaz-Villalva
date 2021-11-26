@@ -124,6 +124,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Crear-cuenta.aspx" />
     <Content Include="css\admin.css" />
     <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
@@ -341,6 +342,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crear-cuenta.aspx.cs">
+      <DependentUpon>Crear-cuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crear-cuenta.aspx.designer.cs">
+      <DependentUpon>Crear-cuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

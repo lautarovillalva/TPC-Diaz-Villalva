@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lunarsoft - App Web</title>
@@ -13,7 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/img/ico.png" rel="shortcut icon" type="image/x-icon" />
     <link href="css/style.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/7463cc8112.js" crossorigin="anonymous"></script>
@@ -42,94 +42,125 @@
         </asp:ScriptManager>
 
         <nav class="navbar navegador navbar-expand-lg navbar-light bg-light">
-  
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-     
-      <li class="nav-item dropdown">
-        <a class="nav-link el-menu dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bars"></i>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/Default">Home</a>
-          <a class="dropdown-item" href="/Productos">Productos</a>
-          <a class="dropdown-item ver-listado" href="#">Categorías <i class="fas fa-plus"></i></a>
-            <ul class="sub-menu-desplegable">
 
-                <% foreach (Dominio.Categoria item in listaCategorias) { %>
-                <li><a class="dropdown-item" href="Productos.aspx?valor=<%:item.Nombre %>"><%: item %></a></li>
-                <%} %>
-            </ul>
-<%--          <a class="dropdown-item ver-listado" href="#">Estilos <i class="fas fa-plus"></i></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link el-menu dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Default">Home</a>
+                            <a class="dropdown-item" href="/Productos">Productos</a>
+                            <a class="dropdown-item ver-listado" href="#">Categorías <i class="fas fa-plus"></i></a>
+                            <ul class="sub-menu-desplegable">
+
+                                <% foreach (Dominio.Categoria item in listaCategorias)
+                                    { %>
+                                <li><a class="dropdown-item" href="Productos.aspx?valor=<%:item.Nombre %>"><%: item %></a></li>
+                                <%} %>
+                            </ul>
+                            <%--          <a class="dropdown-item ver-listado" href="#">Estilos <i class="fas fa-plus"></i></a>
             <ul class="sub-menu-desplegable">
                   <% foreach (Dominio.Estilo item in listaEstilos) { %>
                 <li><a class="dropdown-item" href="#"><%: item %></a></li>
                 <%} %>
             </ul>--%>
-             
-        </div>
-      </li>
+                            <%if (Session["usuario"] == null)
+                                { %>
+                            <a class="dropdown-item ver-listado" href="#">Usuario <i class="fas fa-plus"></i></a>
+                            <ul class="sub-menu-desplegable">
 
-    </ul>
+                                <li><a class="dropdown-item" href="/login.aspx">Iniciar sesión</a></li>
+                                <li><a class="dropdown-item" href="/crear-cuenta">Registrarse</a></li>
 
-      <a class="navbar-brand" href="/Default">
-          <img class="logo" src="img/logo.png" />
-          <img class="scroll-logo" src="img/logo-color.png" />
-      </a>
+                            </ul>
+                            <%}
+                            else
+                            {%>
+                            <a class="dropdown-item ver-listado" href="#"><%:usuario.Mail %> <i class="fas fa-plus"></i></a>
+                            <ul class="sub-menu-desplegable">
+                                <asp:Button class="dropdown-item" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="Cerrar sesión" />
+                                <li><a class="dropdown-item" href="#">Ver compras</a></li>
 
-    <form class="form-inline my-2 my-lg-0">
-       <asp:TextBox class="form-control mr-sm-2" OnTextChanged="txtFiltrar_TextChanged" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
-        <a class="login" href="/login"><i class="far fa-user"></i></a>
-        <a class="carrito" ><i class="fas fa-shopping-cart"></i></a>
-    </form>
-  </div>
-</nav>
+                            </ul>
+                            <%} %>
+
+<%--
+                            <a class="dropdown-item ver-listado" href="#">Usuario <i class="fas fa-plus"></i></a>
+                            <ul class="sub-menu-desplegable">
+
+                                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                                <li><a class="dropdown-item" href="#">Ver compras</a></li>
+
+                            </ul>--%>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <a class="navbar-brand" href="/Default">
+                    <img class="logo" src="img/logo.png" />
+                    <img class="scroll-logo" src="img/logo-color.png" />
+                </a>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <asp:TextBox class="form-control mr-sm-2" OnTextChanged="txtFiltrar_TextChanged" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
+                    <a class="login" href="/login"><i class="far fa-user"></i></a>
 
 
-      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <contenttemplate>
 
-        <div class="carrito-lleno">
-            <a class="cerrar-carrito" id="cerrar-carrito"><i class="fas fa-angle-double-left"></i></a>
-
-            <div class="carrito-contenido">
-                 <% foreach (Dominio.Carrito item in carrito)
-                     { %>
-                
-                 <div class="producto">
-                     <img src="<%: item.Articulo.Imagen %>" />
-                     <div class="info">
-                         <h3><%: item.Articulo.Nombre %></h3>
-                         <span><%: item.Cantidad %></span><span> x $<%: item.Articulo.Precio %></span>
-                     </div>
-                     <asp:LinkButton ID="btnEliminarProducto" runat="server"><i class="fas fa-times"></i></asp:LinkButton>
-                 </div>
-                
-                 <%} %>
+                    <a class="carrito"><i class="fas fa-shopping-cart"></i></a>
+                </form>
             </div>
+        </nav>
 
-            <div class="carrito-footer">
 
-                   <div class="carrito-total">
-                       <span>TOTAL</span>
-                       <span><%: CalcularTotal() %></span>
-                   </div>
+<%--        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
 
-                   <div class="carrito-botones">
-                        <asp:Button ID="btnComprar" runat="server" Text="Finalizar" />
-                        <asp:Button ID="btnBorrar" runat="server" Text="Borrar lista" />
-                   </div>
-            </div>
+                <div class="carrito-lleno">
+                    <a class="cerrar-carrito" id="cerrar-carrito"><i class="fas fa-angle-double-left"></i></a>
 
-          
+                    <div class="carrito-contenido">
+                        <% foreach (Dominio.Carrito item in carrito)
+                            { %>
 
-        </div>
+                        <div class="producto">
+                            <img src="<%: item.Articulo.Imagen %>" />
+                            <div class="info">
+                                <h3><%: item.Articulo.Nombre %></h3>
+                                <span><%: item.Cantidad %></span><span> x $<%: item.Articulo.Precio %></span>
+                            </div>
+                            <asp:LinkButton ID="btnEliminarProducto" runat="server"><i class="fas fa-times"></i></asp:LinkButton>
+                        </div>
 
-              
-        </contenttemplate>
-    </asp:UpdatePanel>
+                        <%} %>
+                    </div>
+
+                    <div class="carrito-footer">
+
+                        <div class="carrito-total">
+                            <span>TOTAL</span>
+                            <span><%: CalcularTotal() %></span>
+                        </div>
+
+                        <div class="carrito-botones">
+                            <asp:Button ID="btnComprar" runat="server" Text="Finalizar" />
+                            <asp:Button ID="btnBorrar" runat="server" Text="Borrar lista" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </ContentTemplate>
+        </asp:UpdatePanel>--%>
 
         <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
