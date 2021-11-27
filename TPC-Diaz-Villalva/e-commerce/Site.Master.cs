@@ -14,14 +14,14 @@ namespace e_commerce
         public Usuario usuario = new Usuario();
         public List<Categoria> listaCategorias = new List<Categoria>();
         public List<Estilo> listaEstilos = new List<Estilo>();
-        public List<Carrito> carrito = new List<Carrito>();
+        public Carrito carrito = new Carrito();
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarListas();
 
             if (Session["lista"] != null)
             {
-                carrito = Session["lista"] as List<Carrito>;
+                carrito.articulos = Session["lista"] as List<Articulo>;
             }
             if (!IsPostBack)
             {
@@ -34,16 +34,6 @@ namespace e_commerce
 
         }
 
-        public double CalcularTotal()
-        {
-            double total = 0;
-            foreach (Carrito item in carrito)
-            {
-                total += item.Total;
-
-            }
-            return total;
-        }
 
 
         public void cargarListas()

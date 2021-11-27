@@ -8,8 +8,32 @@ namespace Dominio
 {
     public class Carrito
     {
-        public Articulo Articulo { get; set; }
-        public int Cantidad { get; set; }
-        public double Total { get; set; }
+        public List<Articulo> articulos;
+
+        public Carrito()
+        {
+            articulos = new List<Articulo>();
+        }
+        public int cantidadArticulos()
+        {
+            int cantidad = 0;
+
+            for (int i = 0; i < articulos.Count; i++)
+            {
+                cantidad += articulos[i].Cantidad;
+            }
+
+            return cantidad;
+        }
+        public double montoTotal()
+        {
+            double total = 0;
+            for (int i = 0; i < articulos.Count; i++)
+            {
+                total += articulos[i].Precio * articulos[i].Cantidad;
+
+            }
+            return total;
+        }
     }
 }

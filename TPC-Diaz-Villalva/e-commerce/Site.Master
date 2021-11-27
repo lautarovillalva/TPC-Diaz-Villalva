@@ -79,8 +79,8 @@
 
                             </ul>
                             <%}
-                            else
-                            {%>
+                                else
+                                {%>
                             <a class="dropdown-item ver-listado" href="#"><%:usuario.Mail %> <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu-desplegable">
                                 <asp:Button class="dropdown-item" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="Cerrar sesión" />
@@ -89,7 +89,7 @@
                             </ul>
                             <%} %>
 
-<%--
+                            <%--
                             <a class="dropdown-item ver-listado" href="#">Usuario <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu-desplegable">
 
@@ -109,17 +109,20 @@
 
                 <form class="form-inline my-2 my-lg-0">
                     <asp:TextBox class="form-control mr-sm-2" OnTextChanged="txtFiltrar_TextChanged" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
-                    <a class="login" href="/login"><i class="far fa-user"></i></a>
+                    <%--<a class="login" href="/login"><i class="far fa-user"></i></a>--%>
 
 
 
-                    <a class="carrito"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="carrito"><i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%:carrito.cantidadArticulos() %>
+                        </span>
+                    </a>
                 </form>
             </div>
         </nav>
 
 
-<%--        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <%--        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
 
                 <div class="carrito-lleno">

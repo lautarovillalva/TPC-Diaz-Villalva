@@ -13,7 +13,7 @@ namespace e_commerce
     {
 
         public Articulo detalleArticulo;
-        public List<Carrito> carrito = new List<Carrito>();
+        public Carrito carrito = new Carrito();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace e_commerce
 
             if (Session["lista"] != null)
             {
-                carrito = Session["lista"] as List<Carrito>;
+                carrito.articulos = Session["lista"] as List<Articulo>;
             }
 
         }
@@ -51,9 +51,9 @@ namespace e_commerce
 
         public bool ArticuloExistente(string id)
         {
-            foreach(Carrito item in carrito)
+            foreach(Articulo item in carrito.articulos)
             {
-                if(item.Articulo.ID.ToString() == id)
+                if(item.ID.ToString() == id)
                 {
                     return true;
                 }
@@ -64,31 +64,32 @@ namespace e_commerce
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Carrito aux = new Carrito();
+            Articulo aux = new Articulo();
 
             if (!ArticuloExistente(detalleArticulo.ID.ToString()))
             {
-                aux.Articulo = detalleArticulo;
+                aux = detalleArticulo;
                 aux.Cantidad = 1;
-                aux.Total = detalleArticulo.Precio * 1;
+                aux.Precio = detalleArticulo.Precio * 1;
                 
-                carrito.Add(aux);
+                carrito.articulos.Add(aux);
             }
             else
             {
-                foreach (var item in carrito)
+                foreach (Articulo item in carrito.articulos)
                 {
-                    if (item.Articulo.ID == detalleArticulo.ID)
+                    if (item.ID == detalleArticulo.ID)
                     {
                         item.Cantidad++;
-                        item.Total += detalleArticulo.Precio;
+                        
                     }
 
                 }
             }
             
             
-            Session["lista"] = carrito;
+            Session["lista"] = carrito.articulos;
+            Response.Redirect("/default.aspx");
         }
     }
 }
