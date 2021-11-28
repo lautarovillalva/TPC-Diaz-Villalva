@@ -84,7 +84,7 @@
                             <a class="dropdown-item ver-listado" href="#"><%:usuario.Mail %> <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu-desplegable">
                                 <asp:Button class="dropdown-item" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="Cerrar sesión" />
-                                <li><a class="dropdown-item" href="#">Ver compras</a></li>
+                                
 
                             </ul>
                             <%} %>
@@ -113,7 +113,7 @@
 
 
 
-                    <a class="carrito"><i class="fas fa-shopping-cart"></i>
+                    <a class="carrito" href="/Compra.aspx"><i class="fas fa-shopping-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%:carrito.cantidadArticulos() %>
                         </span>
                     </a>

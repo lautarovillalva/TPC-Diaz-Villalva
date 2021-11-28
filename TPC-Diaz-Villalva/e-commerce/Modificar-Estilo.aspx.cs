@@ -15,6 +15,10 @@ namespace e_commerce
         public Estilo modificado = new Estilo();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             var idest = Request.QueryString["idest"];
             Estilo_neg estilo_Neg = new Estilo_neg();
             List<Estilo> estilos = new List<Estilo>();
@@ -31,21 +35,33 @@ namespace e_commerce
 
         public void cargarFormulario()
         {
-            tbx_nombre.Text = anterior.Nombre;
+            try
+            {
+                tbx_nombre.Text = anterior.Nombre;
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            modificado.ID = anterior.ID;
-            modificado.Nombre = tbx_nombre.Text;
-
             
-            if (modificado != anterior)
-            {
-                Estilo_neg estilo_Neg = new Estilo_neg();
-                estilo_Neg.modificarEstilo(modificado);
-                Response.Redirect("Estilos.aspx");
-            }
+                modificado.ID = anterior.ID;
+                modificado.Nombre = tbx_nombre.Text;
+
+
+                if (modificado != anterior)
+                {
+                    Estilo_neg estilo_Neg = new Estilo_neg();
+                    estilo_Neg.modificarEstilo(modificado);
+                    Response.Redirect("Estilos.aspx");
+                }
+            
         }
     }
 }

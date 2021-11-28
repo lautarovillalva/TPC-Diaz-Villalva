@@ -18,78 +18,105 @@ namespace e_commerce
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            buscarArticulo(Convert.ToInt32(Request.QueryString["id"]));
-
-            if (Session["lista"] != null)
+            try
             {
-                carrito.articulos = Session["lista"] as List<Articulo>;
+                buscarArticulo(Convert.ToInt32(Request.QueryString["id"]));
+
+                if (Session["lista"] != null)
+                {
+                    carrito.articulos = Session["lista"] as List<Articulo>;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
             }
 
         }
 
         public string BuscarDescripcion(int id)
         {
-            Articulo_neg articulo_Neg = new Articulo_neg();
-            return articulo_Neg.DescripcionArticulo(id);
+            
+                Articulo_neg articulo_Neg = new Articulo_neg();
+                return articulo_Neg.DescripcionArticulo(id);
+    
         }
 
         public void buscarArticulo(int ID)
         {
-            Articulo_neg neg = new Articulo_neg();
-            List<Articulo> lista = neg.ListarArticulos();
-
-            foreach(Articulo item in lista)
+            try
             {
-                if(item.ID == ID)
+                Articulo_neg neg = new Articulo_neg();
+                List<Articulo> lista = neg.ListarArticulos();
+
+                foreach (Articulo item in lista)
                 {
-                    this.detalleArticulo = new Articulo();
-                    this.detalleArticulo = item;
+                    if (item.ID == ID)
+                    {
+                        this.detalleArticulo = new Articulo();
+                        this.detalleArticulo = item;
+                    }
                 }
             }
-           
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
+
         }
 
         public bool ArticuloExistente(string id)
         {
-            foreach(Articulo item in carrito.articulos)
-            {
-                if(item.ID.ToString() == id)
-                {
-                    return true;
-                }
-            }
 
-            return false;
+                foreach (Articulo item in carrito.articulos)
+                {
+                    if (item.ID.ToString() == id)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo aux = new Articulo();
+            
+                Articulo aux = new Articulo();
 
-            if (!ArticuloExistente(detalleArticulo.ID.ToString()))
-            {
-                aux = detalleArticulo;
-                aux.Cantidad = 1;
-                aux.Precio = detalleArticulo.Precio * 1;
-                
-                carrito.articulos.Add(aux);
-            }
-            else
-            {
-                foreach (Articulo item in carrito.articulos)
+                if (!ArticuloExistente(detalleArticulo.ID.ToString()))
                 {
-                    if (item.ID == detalleArticulo.ID)
-                    {
-                        item.Cantidad++;
-                        
-                    }
+                    aux = detalleArticulo;
+                    aux.Cantidad = 1;
+                    aux.Precio = detalleArticulo.Precio * 1;
 
+                    carrito.articulos.Add(aux);
                 }
-            }
+                else
+                {
+                    foreach (Articulo item in carrito.articulos)
+                    {
+                        if (item.ID == detalleArticulo.ID)
+                        {
+                            item.Cantidad++;
+
+                        }
+
+                    }
+                }
+
+
+                Session["lista"] = carrito.articulos;
+                Response.Redirect("/default.aspx");
             
-            
-            Session["lista"] = carrito.articulos;
-            Response.Redirect("/default.aspx");
+        
         }
     }
 }

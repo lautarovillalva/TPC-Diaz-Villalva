@@ -32,9 +32,19 @@ namespace e_commerce
 
             void mostrarCategorias()
             {
-                Categoria_neg categoria_Neg = new Categoria_neg();
-                rpCategorias.DataSource = categoria_Neg.ListarCategorias();
-                rpCategorias.DataBind();
+                try
+                {
+                    Categoria_neg categoria_Neg = new Categoria_neg();
+                    rpCategorias.DataSource = categoria_Neg.ListarCategorias();
+                    rpCategorias.DataBind();
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex.ToString();
+                    Session["error"] = error;
+                    Response.Redirect("/Error.aspx");
+                }
 
             }
 

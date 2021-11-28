@@ -48,6 +48,7 @@
     <Compile Include="Estado_neg.cs" />
     <Compile Include="Estilo_neg.cs" />
     <Compile Include="Medida_neg.cs" />
+    <Compile Include="Medio_de_pago_neg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario_neg.cs" />
     <Compile Include="Venta_neg.cs" />

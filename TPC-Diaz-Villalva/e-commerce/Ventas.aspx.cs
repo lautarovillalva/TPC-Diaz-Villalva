@@ -13,6 +13,10 @@ namespace e_commerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             Venta_neg venta_Neg = new Venta_neg();
             rpVentas.DataSource = venta_Neg.listarVentas();
             rpVentas.DataBind();

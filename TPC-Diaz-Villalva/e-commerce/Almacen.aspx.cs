@@ -50,31 +50,41 @@ namespace e_commerce
         public void mostrarArticulos()
         {
 
-            Articulo_neg art = new Articulo_neg();
-            List<Articulo> lista = art.ListarArticulos();
-            listaVisibles = new List<Articulo>();
-            listaNoVisibles = new List<Articulo>();
-
-
-
-            foreach (Articulo item in lista)
+            try
             {
-                if(item.visible == 1)
+                Articulo_neg art = new Articulo_neg();
+                List<Articulo> lista = art.ListarArticulos();
+                listaVisibles = new List<Articulo>();
+                listaNoVisibles = new List<Articulo>();
+
+
+
+                foreach (Articulo item in lista)
                 {
-                    listaVisibles.Add(item);
+                    if (item.visible == 1)
+                    {
+                        listaVisibles.Add(item);
+                    }
+
+                    else
+                    {
+                        listaNoVisibles.Add(item);
+                    }
                 }
 
-                else
-                {
-                    listaNoVisibles.Add(item);
-                }
+                rpAdminArticulo.DataSource = listaVisibles;
+                rpAdminArticulo.DataBind();
+
+                rpAdminArticuloPapelera.DataSource = listaNoVisibles;
+                rpAdminArticuloPapelera.DataBind();
             }
+            catch (Exception ex)
+            {
 
-            rpAdminArticulo.DataSource = listaVisibles;
-            rpAdminArticulo.DataBind();
-
-            rpAdminArticuloPapelera.DataSource = listaNoVisibles;
-            rpAdminArticuloPapelera.DataBind();
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
 
 
         }

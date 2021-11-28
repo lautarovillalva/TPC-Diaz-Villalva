@@ -16,11 +16,20 @@ namespace e_commerce
         public string graficoCircular = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            totalArticulos();
-            totalUsuarios();
+            
+                if (Session["admin"] == null)
+                {
+                    Response.Redirect("login.aspx");
+                }
 
-            Categoria_neg cat = new Categoria_neg();
-            graficoCircular = cat.getTotal();
+
+                totalArticulos();
+                totalUsuarios();
+
+                Categoria_neg cat = new Categoria_neg();
+                graficoCircular = cat.getTotal();
+            
+
         }
 
 

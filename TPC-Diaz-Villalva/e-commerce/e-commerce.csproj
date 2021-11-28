@@ -107,7 +107,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Agregar-Articulo.aspx" />
     <Content Include="Agregar-Categoria.aspx" />
@@ -116,6 +115,7 @@
     <Content Include="Almacen.aspx" />
     <Content Include="Categorias.aspx" />
     <Content Include="Colores.aspx" />
+    <Content Include="Compra.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -129,6 +129,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Detalle-venta.aspx" />
     <Content Include="Detalles.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Estilos.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -312,13 +313,6 @@
       <DependentUpon>Almacen.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
@@ -333,6 +327,13 @@
     </Compile>
     <Compile Include="Colores.aspx.designer.cs">
       <DependentUpon>Colores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.aspx.cs">
+      <DependentUpon>Compra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compra.aspx.designer.cs">
+      <DependentUpon>Compra.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crear-cuenta.aspx.cs">
       <DependentUpon>Crear-cuenta.aspx</DependentUpon>
@@ -361,6 +362,13 @@
     </Compile>
     <Compile Include="Detalles.aspx.designer.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Estilos.aspx.cs">
       <DependentUpon>Estilos.aspx</DependentUpon>

@@ -36,10 +36,20 @@ namespace e_commerce
 
         public void mostrarArticulos()
         {
-            
-            Articulo_neg art = new Articulo_neg();
-            rpArticulos.DataSource = art.ArticulosFiltrados(Request.QueryString["valor"],true);
-            rpArticulos.DataBind();
+
+            try
+            {
+                Articulo_neg art = new Articulo_neg();
+                rpArticulos.DataSource = art.ArticulosFiltrados(Request.QueryString["valor"], true);
+                rpArticulos.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
         }
 
         //protected void btn_filtrar_Click(object sender, EventArgs e)

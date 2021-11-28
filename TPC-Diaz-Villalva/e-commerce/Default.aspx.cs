@@ -21,8 +21,18 @@ namespace e_commerce
 
         public void cargarCategorias()
         {
-            Categoria_neg aux = new Categoria_neg();
-            lista = aux.ListarCategorias(); 
+            try
+            {
+                Categoria_neg aux = new Categoria_neg();
+                lista = aux.ListarCategorias();
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
         }
 
 

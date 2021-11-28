@@ -15,6 +15,10 @@ namespace e_commerce
         public Color modificado = new Color();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             var idest = Request.QueryString["idcol"];
             Color_neg color_Neg = new Color_neg();
             List<Color> colors = new List<Color>();
@@ -30,23 +34,35 @@ namespace e_commerce
         }
         public void cargarFormulario()
         {
-            tbx_codigo.Text = anterior.Codigo;
-            tbx_nombre.Text = anterior.Nombre;
+            try
+            {
+                tbx_codigo.Text = anterior.Codigo;
+                tbx_nombre.Text = anterior.Nombre;
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
 
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            modificado.ID = anterior.ID;
-            modificado.Nombre = tbx_nombre.Text;
-            modificado.Codigo = tbx_codigo.Text;
+            
+                modificado.ID = anterior.ID;
+                modificado.Nombre = tbx_nombre.Text;
+                modificado.Codigo = tbx_codigo.Text;
 
-            if (modificado != anterior)
-            {
-                Color_neg color_Neg = new Color_neg();
-                color_Neg.modificarColor(modificado);
-                Response.Redirect("Colores.aspx");
-            }
+                if (modificado != anterior)
+                {
+                    Color_neg color_Neg = new Color_neg();
+                    color_Neg.modificarColor(modificado);
+                    Response.Redirect("Colores.aspx");
+                }
+            
 
         }
     }

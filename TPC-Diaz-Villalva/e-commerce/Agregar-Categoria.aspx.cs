@@ -16,22 +16,30 @@ namespace e_commerce
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+                if (Session["admin"] == null)
+                {
+                    Response.Redirect("login.aspx");
+                }
+            
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Categoria_neg categoria_Neg = new Categoria_neg();
-            Categoria nuevo = new Categoria();
-            nuevo.Nombre = tbx_nombre.Text;
+            
+                Categoria_neg categoria_Neg = new Categoria_neg();
+                Categoria nuevo = new Categoria();
+                nuevo.Nombre = tbx_nombre.Text;
 
-            if (FileImg.HasFile)
-            {
-                FileImg.SaveAs(Server.MapPath("~/img/categorias/" + FileImg.FileName));
-            }
+                if (FileImg.HasFile)
+                {
+                    FileImg.SaveAs(Server.MapPath("~/img/categorias/" + FileImg.FileName));
+                }
 
-            categoria_Neg.agregarCategoria(nuevo);
-            Response.Redirect("Categorias.aspx");
+                categoria_Neg.agregarCategoria(nuevo);
+                Response.Redirect("Categorias.aspx");
+            
+            
         }
 
 

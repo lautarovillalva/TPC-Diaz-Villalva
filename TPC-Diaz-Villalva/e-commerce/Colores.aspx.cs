@@ -15,7 +15,11 @@ namespace e_commerce
         private int admin = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] != null)
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
             {
                 this.admin = Convert.ToInt32(Session["admin"]);
 
@@ -30,9 +34,19 @@ namespace e_commerce
         }
         public void mostrarColores()
         {
-            Color_neg color_Neg = new Color_neg();
-            rpColores.DataSource = color_Neg.ListarColores();
-            rpColores.DataBind();
+            try
+            {
+                Color_neg color_Neg = new Color_neg();
+                rpColores.DataSource = color_Neg.ListarColores();
+                rpColores.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
 
         }
     }

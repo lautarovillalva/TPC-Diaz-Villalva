@@ -13,21 +13,35 @@ namespace e_commerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Color_neg color_Neg = new Color_neg();
-            Color color = new Color
+            if(tbx_nombre.Text=="" || tbx_codigo.Text == "")
             {
-                Nombre = tbx_nombre.Text,
-                Codigo = tbx_codigo.Text
-            };
-      
+                Response.Write("<script>alert('Completar campos!')</script>");
+            }
+            else
+            {
 
-            color_Neg.agregarColor(color);
-            Response.Redirect("Colores.aspx");
+                Color_neg color_Neg = new Color_neg();
+                Color color = new Color
+                {
+                    Nombre = tbx_nombre.Text,
+                    Codigo = tbx_codigo.Text
+                };
+
+
+                color_Neg.agregarColor(color);
+                Response.Redirect("Colores.aspx");
+            }
+            
+            
         }
     }
 }

@@ -15,6 +15,10 @@ namespace e_commerce
         public Categoria modificado = new Categoria();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             var idcat = Request.QueryString["idcat"];
             Categoria_neg categoria_Neg = new Categoria_neg();
             List<Categoria> categorias = new List<Categoria>();
@@ -31,20 +35,32 @@ namespace e_commerce
 
         void cargarFormulario()
         {
-            tbx_nombre.Text = anterior.Nombre;
+            try
+            {
+                tbx_nombre.Text = anterior.Nombre;
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+                Session["error"] = error;
+                Response.Redirect("/Error.aspx");
+            }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            modificado.ID = anterior.ID;
+            
+                modificado.ID = anterior.ID;
 
-            modificado.Nombre = tbx_nombre.Text;
-            if(modificado!=anterior)
-            {
-                Categoria_neg categoria_Neg = new Categoria_neg();
-                categoria_Neg.modificarCategoria(modificado);
-                Response.Redirect("Categorias.aspx");
-            }
+                modificado.Nombre = tbx_nombre.Text;
+                if (modificado != anterior)
+                {
+                    Categoria_neg categoria_Neg = new Categoria_neg();
+                    categoria_Neg.modificarCategoria(modificado);
+                    Response.Redirect("Categorias.aspx");
+                }
+            
 
 
         }
