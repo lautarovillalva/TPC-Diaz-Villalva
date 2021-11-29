@@ -34,8 +34,15 @@ namespace e_commerce
 
 
         //Pendiente de hacer igual que los demas para eso tenes que terminar de DAO la clase de ventas y mostrar la ganacia total en $
-        public void totalVentas()
+        public double totalVentas()
         {
+            double total = 0;
+            Venta_neg venta_Neg = new Venta_neg();
+            foreach (Venta item in venta_Neg.listarVentas())
+            {
+                total += item.Total;
+            }
+            return total;
             
         }
 

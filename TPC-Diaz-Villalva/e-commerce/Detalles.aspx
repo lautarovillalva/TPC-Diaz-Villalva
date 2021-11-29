@@ -66,7 +66,7 @@ en sucursales seleccionadas
                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                                <div class="botones">
-                                   <%--<asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" />--%>
+                                   
                                    <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" runat="server" UseSubmitBehavior="False" Text="Agregar al carrito" />
                                </div>
 
@@ -75,9 +75,7 @@ en sucursales seleccionadas
                                <br />
                                <p>
                                    <%:BuscarDescripcion(detalleArticulo.ID) %>
-<%--                                   Juego de sábanas liso de colores, compuesto por microfibra. Estilo y diseño para la cama de los más chicos.  <br />
-Medidas: Para colchón de hasta 0.90 m de ancho x 1.90 m de largo x 0.20 m de alto.  <br />
-Incluye: 3 piezas.--%>
+ 
 
                                </p>
                            </div>

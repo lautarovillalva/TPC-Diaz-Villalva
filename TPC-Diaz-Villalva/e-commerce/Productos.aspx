@@ -32,32 +32,6 @@ en sucursales seleccionadas
   
      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
           <contenttemplate>
-
-<%--    <div class="container filtrar">
-       <div class="row">
-         <div class="col-sm">
-            <asp:DropDownList class="drop"  ID="drpCategorias" runat="server"  ></asp:DropDownList>
-         </div>
-         <div class="col-sm">
-           <asp:DropDownList class="drop" ID="drpEstilos" runat="server"></asp:DropDownList>
-           
-         </div>
-         <div class="col-sm">
-           <asp:DropDownList class="drop" ID="drpCompsiciones" runat="server"></asp:DropDownList>
-         </div>
-         <div class="col-sm">
-            <asp:DropDownList class="drop" ID="drpMedidas" runat="server"></asp:DropDownList>
-         </div>
-         <div class="col-sm">
-           <asp:Button class="btn btn-outline-primary btn-lg btn-block" ID="btn_filtrar" Text="Filtrar" OnClick="btn_filtrar_Click" runat="server"   UseSubmitBehavior="False" />
-             
-         </div>
-
-       </div>
-
-        <br />
-        <hr />
-   </div>--%>
          
 
   <asp:Label ID="texto" runat="server"></asp:Label>

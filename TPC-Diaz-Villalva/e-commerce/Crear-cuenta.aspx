@@ -16,12 +16,12 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <%--<input type="text" id="txtNombre" class="form-control" />--%>
+                                                
                                                 <asp:TextBox type="text" id="txtNombre" class="form-control" runat="server" />
                                                 <label class="form-label" for="form3Example1c">Nombre</label>
                                             </div>
                                             <div class="form-outline flex-fill mb-0">
-                                                <%--<input type="text" id="txtApellido" class="form-control" />--%>
+                                                
                                                  <asp:TextBox type="text" id="txtApellido" class="form-control" runat="server" />
                                                 <label class="form-label" for="form3Example1c">Apellido</label>
                                             </div>
@@ -30,7 +30,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <%--<input type="email" id="txtEmail" class="form-control" />--%>
+                                               
                                                 <asp:TextBox type="text" id="txtMail" class="form-control" runat="server" />
                                                 <label class="form-label" for="form3Example3c">Mail</label>
                                             </div>
@@ -39,7 +39,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <%--<input type="password" id="txtContraseña1" class="form-control" />--%>
+                                                
                                                 <asp:TextBox type="password" id="txtContraseña1" class="form-control" runat="server" />
                                                 <label class="form-label" for="form3Example4c">Contraseña</label>
                                             </div>
@@ -48,7 +48,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <%--<input type="password" id="txtContraseña2" class="form-control" />--%>
+                                                
                                                 <asp:TextBox type="password" id="txtContraseña2" class="form-control" runat="server" />
                                                 <label class="form-label" for="form3Example4cd">Repetir Contraseña</label>
                                             </div>
@@ -56,7 +56,7 @@
 
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <%--<button type="button" class="btn btn-primary btn-lg" id="btnCrearCuenta">Crear cuenta</button>--%>
+                                            
                                             <asp:LinkButton Text="Crear Cuenta" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click" class="btn btn-primary btn-lg" runat="server" />
                                         </div>
 

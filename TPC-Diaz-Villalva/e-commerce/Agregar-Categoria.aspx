@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="product_name">IMAGEN </label>
                 <div class="col-md-4">
-                    <%--<asp:TextBox ID="tbx_imagen" CssClass="form-control input-group-lg" runat="server" />--%>
+
                     <asp:FileUpload ID="FileImg" runat="server" />
                 </div>
             </div>

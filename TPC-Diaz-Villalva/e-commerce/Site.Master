@@ -63,12 +63,7 @@
                                 <li><a class="dropdown-item" href="Productos.aspx?valor=<%:item.Nombre %>"><%: item %></a></li>
                                 <%} %>
                             </ul>
-                            <%--          <a class="dropdown-item ver-listado" href="#">Estilos <i class="fas fa-plus"></i></a>
-            <ul class="sub-menu-desplegable">
-                  <% foreach (Dominio.Estilo item in listaEstilos) { %>
-                <li><a class="dropdown-item" href="#"><%: item %></a></li>
-                <%} %>
-            </ul>--%>
+                             
                             <%if (Session["usuario"] == null)
                                 { %>
                             <a class="dropdown-item ver-listado" href="#">Usuario <i class="fas fa-plus"></i></a>
@@ -88,15 +83,7 @@
 
                             </ul>
                             <%} %>
-
-                            <%--
-                            <a class="dropdown-item ver-listado" href="#">Usuario <i class="fas fa-plus"></i></a>
-                            <ul class="sub-menu-desplegable">
-
-                                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
-                                <li><a class="dropdown-item" href="#">Ver compras</a></li>
-
-                            </ul>--%>
+ 
                         </div>
                     </li>
 
@@ -109,7 +96,7 @@
 
                 <form class="form-inline my-2 my-lg-0">
                     <asp:TextBox class="form-control mr-sm-2" OnTextChanged="txtFiltrar_TextChanged" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
-                    <%--<a class="login" href="/login"><i class="far fa-user"></i></a>--%>
+    
 
 
 
@@ -122,48 +109,7 @@
         </nav>
 
 
-        <%--        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-
-                <div class="carrito-lleno">
-                    <a class="cerrar-carrito" id="cerrar-carrito"><i class="fas fa-angle-double-left"></i></a>
-
-                    <div class="carrito-contenido">
-                        <% foreach (Dominio.Carrito item in carrito)
-                            { %>
-
-                        <div class="producto">
-                            <img src="<%: item.Articulo.Imagen %>" />
-                            <div class="info">
-                                <h3><%: item.Articulo.Nombre %></h3>
-                                <span><%: item.Cantidad %></span><span> x $<%: item.Articulo.Precio %></span>
-                            </div>
-                            <asp:LinkButton ID="btnEliminarProducto" runat="server"><i class="fas fa-times"></i></asp:LinkButton>
-                        </div>
-
-                        <%} %>
-                    </div>
-
-                    <div class="carrito-footer">
-
-                        <div class="carrito-total">
-                            <span>TOTAL</span>
-                            <span><%: CalcularTotal() %></span>
-                        </div>
-
-                        <div class="carrito-botones">
-                            <asp:Button ID="btnComprar" runat="server" Text="Finalizar" />
-                            <asp:Button ID="btnBorrar" runat="server" Text="Borrar lista" />
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
-            </ContentTemplate>
-        </asp:UpdatePanel>--%>
+         
 
         <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
