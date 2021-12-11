@@ -16,7 +16,7 @@
 
 
                     <a href="/Modificar-estilo.aspx?idest=<%# Eval("ID") %>" class="list-group-item list-group-item-action"><%# Eval("ID") %> - <%# Eval("Nombre") %></a>
-
+                    <p>Visible: <%# Eval("Visible") %></p>
 
                 </ItemTemplate>
             </asp:Repeater>

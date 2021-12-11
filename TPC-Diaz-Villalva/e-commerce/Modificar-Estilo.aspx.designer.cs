@@ -24,15 +24,6 @@ namespace e_commerce
         protected global::System.Web.UI.WebControls.TextBox tbx_nombre;
 
         /// <summary>
-        /// Control cbx_visible.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbx_visible;
-
-        /// <summary>
         /// Control btnModificar.
         /// </summary>
         /// <remarks>
@@ -40,5 +31,14 @@ namespace e_commerce
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnModificar;
+
+        /// <summary>
+        /// Control btnVisible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVisible;
     }
 }

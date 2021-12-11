@@ -63,5 +63,28 @@ namespace e_commerce
                 }
             
         }
+
+        protected void btnVisible_Click(object sender, EventArgs e)
+        {
+            modificado.ID = anterior.ID;
+
+            modificado.Nombre = tbx_nombre.Text;
+            if (modificado != anterior)
+            {
+                modificado.Visible = !anterior.Visible;
+
+                Estilo_neg estilo_Neg= new Estilo_neg();
+                estilo_Neg.modificarEstilo(modificado);
+                Response.Redirect("Estilos.aspx");
+            }
+            else
+            {
+                anterior.Visible = !anterior.Visible;
+
+                Estilo_neg estilo_Neg= new Estilo_neg();
+                estilo_Neg.modificarEstilo(anterior);
+                Response.Redirect("Estilos.aspx");
+            }
+        }
     }
 }

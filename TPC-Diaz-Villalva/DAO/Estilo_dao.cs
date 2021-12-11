@@ -14,14 +14,15 @@ namespace DAO
         public List<Estilo> GetEstilos()
         {
             List<Estilo> lista = new List<Estilo>();
-            string consulta = "SELECT ESTILOS.ID, ESTILOS.NOMBRE FROM ESTILOS";
+            string consulta = "SELECT ESTILOS.ID, ESTILOS.NOMBRE, ESTILOS.VISIBLE FROM ESTILOS";
             DataTable tabla = accesoDatos.ObtenerTabla("Estilos", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 Estilo estilo= new Estilo
                 {
                     ID = Convert.ToInt32(tabla.Rows[i][0]),
-                    Nombre = tabla.Rows[i][1].ToString()
+                    Nombre = tabla.Rows[i][1].ToString(),
+                    Visible= Convert.ToBoolean(tabla.Rows[i][2])
                 };
 
 
@@ -33,7 +34,7 @@ namespace DAO
 
         public bool modEstilo(Estilo estilo)
         {
-            string consulta = "UPDATE ESTILOS SET NOMBRE='" + estilo.Nombre + "' WHERE ID='"+estilo.ID+"' ";
+            string consulta = "UPDATE ESTILOS SET NOMBRE='" + estilo.Nombre + "',VISIBLE='"+estilo.Visible+"' WHERE ID='" + estilo.ID+"' ";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)
@@ -45,7 +46,7 @@ namespace DAO
         }
         public bool setEstilo(Estilo estilo)
         {
-            string consulta = "INSERT INTO ESTILOS(NOMBRE) VALUES ('"+ estilo.Nombre+"') ";
+            string consulta = "INSERT INTO ESTILOS(NOMBRE, VISIBLE) VALUES ('"+ estilo.Nombre+"', 'false') ";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)
