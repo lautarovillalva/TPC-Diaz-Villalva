@@ -78,6 +78,7 @@
                                 {%>
                             <a class="dropdown-item ver-listado" href="#"><%:usuario.Mail %> <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu-desplegable">
+                                <li><a class="dropdown-item" href="/Compras-realizadas">Compras realizadas</a></li>
                                 <asp:Button class="dropdown-item" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="Cerrar sesión" />
                                 
 

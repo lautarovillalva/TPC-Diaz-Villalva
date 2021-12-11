@@ -116,6 +116,7 @@
     <Content Include="Categorias.aspx" />
     <Content Include="Colores.aspx" />
     <Content Include="Compra.aspx" />
+    <Content Include="Compras-realizadas.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -335,6 +336,13 @@
     </Compile>
     <Compile Include="Compra.aspx.designer.cs">
       <DependentUpon>Compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compras-realizadas.aspx.cs">
+      <DependentUpon>Compras-realizadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compras-realizadas.aspx.designer.cs">
+      <DependentUpon>Compras-realizadas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crear-cuenta.aspx.cs">
       <DependentUpon>Crear-cuenta.aspx</DependentUpon>
