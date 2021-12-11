@@ -24,7 +24,9 @@
                         <div class="card-body">
                           <h5 class="card-title"><%# Eval("Nombre") %></h5>
                           <p class="card-text">ID: <%# Eval("ID") %></p>
+                            <p class="card-text">Visible: <%# Eval("Visible") %></p>
                           <a   class="btn btn-primary" href="/Modificar-categoria.aspx?idcat=<%# Eval("ID") %>">Modificar</a>
+
                         </div>
                       </div>
                      </div>

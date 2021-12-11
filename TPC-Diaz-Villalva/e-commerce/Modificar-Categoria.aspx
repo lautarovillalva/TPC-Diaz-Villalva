@@ -35,6 +35,8 @@
     <div class="form-group">
         <div class="col-md-4">
             <asp:Button ID="btnModificar" OnClick="btnModificar_Click" CssClass="btn btn-primary" Text="Guardar" runat="server" />
+            <asp:Button ID="btnVisible" OnClick="btnVisible_Click" CssClass="btn btn-primary" Text="Cambiar visualización" runat="server" />
+
             <a class="btn btn-primary" href="Almacen.aspx">Cancelar</a>
         </div>
     </div>

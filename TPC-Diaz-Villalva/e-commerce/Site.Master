@@ -94,7 +94,7 @@
                     <img class="scroll-logo" src="img/logo-color.png" />
                 </a>
 
-                <form class="form-inline my-2 my-lg-0">
+                <div class="form-inline my-2 my-lg-0">
                     <asp:TextBox class="form-control mr-sm-2" OnTextChanged="txtFiltrar_TextChanged" ID="txtFiltrar" runat="server" placeholder="¿Qué estás buscando?"></asp:TextBox>
     
 
@@ -104,7 +104,7 @@
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%:carrito.cantidadArticulos() %>
                         </span>
                     </a>
-                </form>
+                </div>
             </div>
         </nav>
 
@@ -113,6 +113,7 @@
 
         <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
             </asp:ContentPlaceHolder>
 
             <footer>

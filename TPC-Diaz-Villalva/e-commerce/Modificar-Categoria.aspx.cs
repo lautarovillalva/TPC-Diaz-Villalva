@@ -64,5 +64,29 @@ namespace e_commerce
 
 
         }
+
+        protected void btnVisible_Click(object sender, EventArgs e)
+        {
+            modificado.ID = anterior.ID;
+
+            modificado.Nombre = tbx_nombre.Text;
+            if (modificado != anterior)
+            {
+                modificado.Visible =! anterior.Visible;
+
+                Categoria_neg categoria_Neg = new Categoria_neg();
+                categoria_Neg.modificarCategoria(modificado);
+                Response.Redirect("Categorias.aspx");
+            }
+            else
+            {
+                anterior.Visible = !anterior.Visible;
+
+                Categoria_neg categoria_Neg = new Categoria_neg();
+                categoria_Neg.modificarCategoria(anterior);
+                Response.Redirect("Categorias.aspx");
+            }
+
+        }
     }
 }

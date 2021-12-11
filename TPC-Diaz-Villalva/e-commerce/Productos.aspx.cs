@@ -39,8 +39,17 @@ namespace e_commerce
 
             try
             {
+                List<Articulo> articulosVisibles = new List<Articulo>();
                 Articulo_neg art = new Articulo_neg();
-                rpArticulos.DataSource = art.ArticulosFiltrados(Request.QueryString["valor"], true);
+                foreach (Articulo item in art.ArticulosFiltrados(Request.QueryString["valor"], true))
+                {
+                    if (item.visible == true)
+                        articulosVisibles.Add(item);
+
+                }
+
+
+                rpArticulos.DataSource = articulosVisibles;
                 rpArticulos.DataBind();
             }
             catch (Exception ex)

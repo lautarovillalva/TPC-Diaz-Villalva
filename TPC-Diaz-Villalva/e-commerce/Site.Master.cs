@@ -48,7 +48,7 @@ namespace e_commerce
 
         protected void txtFiltrar_TextChanged(object sender, EventArgs e)
         {
-            Response.Redirect("Productos.aspx?valor="+ txtFiltrar.Text);
+           Response.Redirect("Productos.aspx?valor="+ txtFiltrar.Text);
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

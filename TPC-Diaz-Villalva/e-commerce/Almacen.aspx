@@ -51,9 +51,6 @@
                                             <!-- MODIFICAR ARTICULO -->
                                             <a class="dropdown-item" href="/Modificar-articulo.aspx?idprod=<%# Eval("ID") %>">Modificar</a>
 
-                                            <!-- MODIFICAR CLONAR -->
-                                            <a class="dropdown-item" href="#">Clonar</a>
-                                            <div class="dropdown-divider"></div>
 
                                             <!-- MOVER A LA PAPELERA -->
                                             <asp:Button class="dropdown-item" ID="btnEliminarProducto" runat="server" Text="Borrar" OnCommand="btnEliminarProducto_Command" CommandArgument='<%# Eval("ID") %>' CommandName="eventoEliminar"  UseSubmitBehavior="False"/>
@@ -155,9 +152,7 @@
                                     <img src="<%# Eval("Imagen") %>" class="card-img-top" alt="...">
 
                                     <div class="descripcion">
-                                        <p>
-                                            HOLA Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
-                                        </p>
+                                       
                                         <div class="caracteristicas">
                                            <span>Medida  <b> <%# Eval("medida") %> </b></span>
                                            <span>Categoria <b>  <%# Eval("categoria") %></b></span>

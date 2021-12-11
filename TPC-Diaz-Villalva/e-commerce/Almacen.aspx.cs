@@ -61,7 +61,7 @@ namespace e_commerce
 
                 foreach (Articulo item in lista)
                 {
-                    if (item.visible == 1)
+                    if (item.visible == true)
                     {
                         listaVisibles.Add(item);
                     }

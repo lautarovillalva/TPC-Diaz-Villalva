@@ -14,14 +14,15 @@ namespace DAO
         public List<Categoria> GetCategorias()
         {
             List<Categoria> lista = new List<Categoria>();
-            string consulta = "SELECT CATEGORIAS.ID, CATEGORIAS.NOMBRE FROM CATEGORIAS";
+            string consulta = "SELECT CATEGORIAS.ID, CATEGORIAS.NOMBRE, CATEGORIAS.VISIBLE FROM CATEGORIAS";
             DataTable tabla = accesoDatos.ObtenerTabla("Categorias", consulta);
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 Categoria categoria = new Categoria
                 {
                     ID = Convert.ToInt32(tabla.Rows[i][0]),
-                    Nombre = tabla.Rows[i][1].ToString()
+                    Nombre = tabla.Rows[i][1].ToString(),
+                    Visible = Convert.ToBoolean(tabla.Rows[i][2])
                 };
 
                 lista.Add(categoria);
@@ -31,7 +32,7 @@ namespace DAO
         }
         public bool modCategoria(Categoria categoria)
         {
-            string consulta = "UPDATE CATEGORIAS SET NOMBRE='"+categoria.Nombre+"' WHERE ID='"+categoria.ID+"'";
+            string consulta = "UPDATE CATEGORIAS SET NOMBRE='"+categoria.Nombre+"', VISIBLE='"+categoria.Visible+"' WHERE ID='"+categoria.ID+"'";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)
@@ -63,7 +64,7 @@ namespace DAO
         }
         public bool setCategoria(Categoria categoria)
         {
-            string consulta = "INSERT INTO CATEGORIAS (NOMBRE) VALUES('" + categoria.Nombre + "')";
+            string consulta = "INSERT INTO CATEGORIAS (NOMBRE, ESTADO) VALUES('" + categoria.Nombre + "', '0')";
             int filas = accesoDatos.EjecutarConsulta(consulta);
 
             if (filas > 0)

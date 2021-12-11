@@ -38,13 +38,15 @@
         <div class="row">
 
         <% foreach (Dominio.Categoria categoria in lista)
-            { %>
+            { if (categoria.Visible == true)
+                {%>
 
             <div class="col-sm">
                <a href="Productos.aspx?valor=<%:categoria.Nombre %>"><img src="img/categorias/<%: categoria.Nombre%>.png" /></a>
             </div>
        
-       <%} %>
+       <%}
+                    } %>
         </div>
    </div>
 
