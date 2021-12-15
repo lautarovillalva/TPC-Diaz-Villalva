@@ -59,9 +59,12 @@
                             <ul class="sub-menu-desplegable">
 
                                 <% foreach (Dominio.Categoria item in listaCategorias)
-                                    { %>
+                                    {
+                                        if (item.Visible == true)
+                                        {%>
                                 <li><a class="dropdown-item" href="Productos.aspx?valor=<%:item.Nombre %>"><%: item %></a></li>
-                                <%} %>
+                                          <%}
+                                  } %>
                             </ul>
                              
                             <%if (Session["usuario"] == null)

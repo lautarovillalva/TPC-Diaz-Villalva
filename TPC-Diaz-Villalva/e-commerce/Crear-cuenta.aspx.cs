@@ -55,7 +55,7 @@ namespace e_commerce
                     usuario_Neg.agregarUsuario(usuario);
                     Session["usuario"] = usuario;
                     Response.Write("<script>alert('Usuario registrado!')</script>");
-                    Response.AddHeader("REFRESH", "0;URL=/inicio.aspx");
+                    Response.AddHeader("REFRESH", "0;URL=/Default.aspx");
                 }
             
 
